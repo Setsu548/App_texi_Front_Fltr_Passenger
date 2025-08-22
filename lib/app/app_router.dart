@@ -50,3 +50,18 @@ final GoRouter appRouter = GoRouter(
     ),
   ]
 );
+
+extension GoRouterExtension on GoRouter {
+  void popUntil(String location, {Object? extra}) {
+    while (routerDelegate.currentConfiguration.matches.last.matchedLocation != location) {
+      if (!canPop()) {
+        return;
+      }
+      pop(extra);
+    }
+  }
+}
+
+extension GoRouterHelper on BuildContext {
+  void popUntil(String location, {Object? extra}) => GoRouter.of(this).popUntil(location, extra: extra);
+}

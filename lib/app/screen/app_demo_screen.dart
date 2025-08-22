@@ -18,6 +18,7 @@ class AppDemoScreen extends HookWidget {
       body: TabBarView(
         controller: controller,
         children: [
+          AppDemoTextsView()
         ],
       ),
       bottomBar: TabBar(
@@ -26,20 +27,32 @@ class AppDemoScreen extends HookWidget {
           Tab(
             text: 'Txt',
           ),
-          Tab(
-            text: 'Btn',
-          ),
-          Tab(
-            text: 'Cards',
-          ),
-          Tab(
-            text: 'Form',
-          ),
-          Tab(
-            text: 'Otros',
-          ),
+          // Tab(
+          //   text: 'Btn',
+          // ),
+          // Tab(
+          //   text: 'Cards',
+          // ),
+          // Tab(
+          //   text: 'Form',
+          // ),
+          // Tab(
+          //   text: 'Otros',
+          // ),
         ],
       ),
+    );
+  }
+}
+class AppDemoTextsView extends HookWidget {
+  const AppDemoTextsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('EJEMPLO')
+      ]
     );
   }
 }

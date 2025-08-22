@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import '../../app/app_router.dart';
 import '../../app/app_scaffold.dart';
 import '../view/security_login_view.dart';
 
@@ -44,7 +45,7 @@ class SecurityLoginScreen extends HookWidget {
                           ),
                         ),
                         ElevatedButton(onPressed: (){
-            
+                          appRouter.push('/demo');
                         }, child: Text('Demo'))
                       ],
                     ),
