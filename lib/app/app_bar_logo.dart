@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 class AppBarLogo extends HookWidget implements PreferredSizeWidget {
   AppBarLogo(BuildContext context, {Key? key})
-      : preferredSize = Size.fromHeight(120),
+      : preferredSize = Size.fromHeight(50),
         super(key: key);
 
   @override
@@ -20,7 +20,7 @@ class AppBarLogo extends HookWidget implements PreferredSizeWidget {
             ),
           ),
           centerTitle: preferredSize.height == kToolbarHeight,
-          automaticallyImplyLeading: false,
+          automaticallyImplyLeading: true,
           toolbarHeight: preferredSize.height,
         );
   }

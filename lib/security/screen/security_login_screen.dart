@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import '../../app/app_router.dart';
 import '../../app/app_scaffold.dart';
 import '../view/security_login_view.dart';
 
@@ -26,27 +25,13 @@ class SecurityLoginScreen extends HookWidget {
                     const SizedBox(height: 20),
                     Stack(
                       children: [
-                        // Positioned(
-                        //   top: 16,
-                        //   left: -10,
-                        //   child: AppSecondaryBtn.icon(
-                        //     onPressed: () {
-                        //       appRouter.pop();
-                        //     },
-                        //     text: null,
-                        //     icon: const Icon(Icons.arrow_back),
-                        //     onCard: false,
-                        //   ),
-                        // ),
                         Center(
                           child: Image.asset(
                             'assets/images/texi.png',
                             width: MediaQuery.of(context).size.height * 0.2,
                           ),
                         ),
-                        ElevatedButton(onPressed: (){
-                          appRouter.push('/demo');
-                        }, child: Text('Demo'))
+                        
                       ],
                     ),
                     const SizedBox(height: 20),

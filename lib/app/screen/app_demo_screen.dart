@@ -13,35 +13,31 @@ class AppDemoScreen extends HookWidget {
     useListenable(controller);
 
     return AppScaffold(
-      loadingOverlay: true,
-      appBar: AppBarLogo(context),
-      body: TabBarView(
+    loadingOverlay: true,
+    appBar: AppBarLogo(context),
+    body: TabBarView(
+      controller: controller,
+      children: const [
+        AppDemoTextsView(),
+        Center(child: Text("Botones")),
+        Center(child: Text("Tarjetas")),
+        Center(child: Text("Formulario")),
+        Center(child: Text("Otros")),
+      ],
+    ),
+    bottomBar: SafeArea( // 👈 evita que se pegue a los botones del sistema
+      child: TabBar(
         controller: controller,
-        children: [
-          AppDemoTextsView()
+        tabs: const [
+          Tab(text: 'Txt'),
+          Tab(text: 'Btn'),
+          Tab(text: 'Cards'),
+          Tab(text: 'Form'),
+          Tab(text: 'Otros'),
         ],
       ),
-      bottomBar: TabBar(
-        controller: controller,
-        tabs: const <Widget>[
-          Tab(
-            text: 'Txt',
-          ),
-          // Tab(
-          //   text: 'Btn',
-          // ),
-          // Tab(
-          //   text: 'Cards',
-          // ),
-          // Tab(
-          //   text: 'Form',
-          // ),
-          // Tab(
-          //   text: 'Otros',
-          // ),
-        ],
-      ),
-    );
+    ),
+  );
   }
 }
 class AppDemoTextsView extends HookWidget {
