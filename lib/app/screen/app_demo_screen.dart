@@ -1,3 +1,16 @@
+import 'package:app_texi_passenger/app/widgets/body_text_bold_widget.dart';
+import 'package:app_texi_passenger/app/widgets/body_text_primary_widget.dart';
+import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/danger_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/label_text_primary_widget.dart';
+import 'package:app_texi_passenger/app/widgets/label_text_secondary_widget.dart';
+import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/secondary_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/small_text_secondary_widget.dart';
+import 'package:app_texi_passenger/app/widgets/small_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -19,7 +32,7 @@ class AppDemoScreen extends HookWidget {
       controller: controller,
       children: const [
         AppDemoTextsView(),
-        Center(child: Text("Botones")),
+        AppDemoBtnsView(),
         Center(child: Text("Tarjetas")),
         Center(child: Text("Formulario")),
         Center(child: Text("Otros")),
@@ -45,10 +58,91 @@ class AppDemoTextsView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('EJEMPLO')
-      ]
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding( 
+              padding: EdgeInsets.all(10), 
+              child: TitleText('TITLE TEXT'),
+            ),
+            Padding( 
+              padding: EdgeInsets.all(10), 
+              child: BodyText('BODY TEXT'),
+            ),
+            Padding( 
+              padding: EdgeInsets.all(10), 
+              child: BodyTextBold('BODY TEXT BOLD'),
+            ),
+            Padding( 
+              padding: EdgeInsets.all(10), 
+              child: BodyTextPrimary('BODY TEXT PRIMARY'),
+            ),
+            Padding( 
+              padding: EdgeInsets.all(10), 
+              child: LabelText('LABEL TEXT'),
+            ),
+            Padding( 
+              padding: EdgeInsets.all(10), 
+              child: LabelTextPrimary('LABEL TEXT PRIMARY'),
+            ),
+            Container( 
+              padding: EdgeInsets.all(10), 
+              decoration: BoxDecoration(
+                color: lightColorScheme.secondaryContainer, 
+                borderRadius: BorderRadius.circular(12), 
+              ),
+              child: LabelTextSecondary('LABEL TEXT SECONDARY'),
+            ),
+            Padding( 
+              padding: EdgeInsets.all(10), 
+              child: SmallText('SMALL TEXT'),
+            ),
+            Container( 
+              padding: EdgeInsets.all(10), 
+              decoration: BoxDecoration(
+                color: lightColorScheme.secondaryContainer, 
+                borderRadius: BorderRadius.circular(12)
+              ),
+              child: SmallTextSecondary('SMALL TEXT SECONDARY')
+            ),
+          ],
+        ),
+      )
+    ); 
+  }
+}
+
+
+class AppDemoBtnsView extends HookWidget {
+  const AppDemoBtnsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.all(12),
+        child: Column(
+          children: [
+            PrimaryButton(
+              text: 'Primary Button', 
+              onPressed: () {}
+            ),
+            SizedBox(height: 10),
+            SecondaryButton(
+              text: 'Secondary Button',
+              onPressed: () {},
+            ),
+            SizedBox(height: 10),
+            DangerButton(
+              text: 'Danger Button', 
+              onPressed: () {}
+            )
+          ],
+        )
+      )
     );
   }
 }

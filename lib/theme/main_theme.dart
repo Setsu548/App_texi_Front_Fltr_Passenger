@@ -20,7 +20,7 @@ const lightColorScheme = ColorScheme(
   surface: Color(0xFF121212), // Superficies
   onSurface: Color(0xFFFFFFFF),
   outline: Color(0xFF424242), // Bordes grises
-  surfaceVariant: Color(0xFF2C2C2C),
+  surfaceVariant: Color.fromARGB(255, 247, 96, 3),
   surfaceTint: Color(0xFFFFFFFF), // Texto blanco
 );
 
@@ -74,21 +74,18 @@ class MainTheme {
       // ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all(lightColorScheme.surface),
           elevation: const MaterialStatePropertyAll(5),
           surfaceTintColor: const MaterialStatePropertyAll(Colors.transparent),
-          backgroundColor: MaterialStateProperty.all(lightColorScheme.surface),
+          backgroundColor: MaterialStateProperty.all(lightColorScheme.primary),
           textStyle: MaterialStatePropertyAll(theme.textTheme.titleMedium),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-              side: BorderSide(
-                color: lightColorScheme.outline,
-                width: 2,
-              ),
+              borderRadius: const BorderRadius.all(Radius.circular(25)),
             ),
           ),
           minimumSize: const MaterialStatePropertyAll(Size.zero),
-          padding: const MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0)),
+          padding: const MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0)),
         ),
       ),
       filledButtonTheme: FilledButtonThemeData(
