@@ -1,11 +1,17 @@
 import 'package:app_texi_passenger/app/widgets/body_text_bold_widget.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/card_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/danger_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/inline_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/labeled_dropdown_widget.dart';
+import 'package:app_texi_passenger/app/widgets/labeled_text_field_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/radio_group_row_widget.dart';
+import 'package:app_texi_passenger/app/widgets/radio_group_widget.dart';
 import 'package:app_texi_passenger/app/widgets/secondary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/small_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/small_text_widget.dart';
@@ -32,9 +38,9 @@ class AppDemoScreen extends HookWidget {
       controller: controller,
       children: const [
         AppDemoTextsView(),
-        AppDemoBtnsView(),
-        Center(child: Text("Tarjetas")),
-        Center(child: Text("Formulario")),
+        AppDemoBtnView(),
+        AppDemoCardView(),
+        AppDemoFormView(),
         Center(child: Text("Otros")),
       ],
     ),
@@ -116,8 +122,8 @@ class AppDemoTextsView extends HookWidget {
 }
 
 
-class AppDemoBtnsView extends HookWidget {
-  const AppDemoBtnsView({super.key});
+class AppDemoBtnView extends HookWidget {
+  const AppDemoBtnView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -139,10 +145,97 @@ class AppDemoBtnsView extends HookWidget {
             DangerButton(
               text: 'Danger Button', 
               onPressed: () {}
+            ),
+            SizedBox(height: 10,),
+            InlineButton(
+              text: 'Inline Button',
+              onPressed: () {},
             )
           ],
         )
       )
+    );
+  }
+}
+
+
+class AppDemoCardView extends HookWidget {
+  const AppDemoCardView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.all(12),
+        child: Column(
+          children: [
+            CardSecondary(children: [Text('Card Secondary')])
+          ]
+        )
+      )
+    );
+  }
+}
+
+class AppDemoFormView extends HookWidget {
+  const AppDemoFormView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CardSecondary(
+                children: [
+                  LabeledTextField(
+                    label: "Nombres*",
+                    hint: "Ej. Juan Diego",
+                  ),
+                  LabeledTextField(
+                    label: "Apellidos*",
+                    hint: "Ej. Dias Soto",
+                  ),
+                  LabeledTextField(
+                    label: "Numero de Telefono*",
+                    hint: "77777777",
+                    keyboardType: TextInputType.number,
+                    prefixText: '+591',
+                  ),
+                  LabeledDropdown<String>(
+                    label: "Departamento",
+                    hint: "Selecciona una ciudad",
+                    items: [
+                      DropdownMenuItem(
+                        value: "Cochabamba",
+                        child: BodyText("Cochabamba", color: lightColorScheme.surface),
+                      ),
+                      DropdownMenuItem(
+                        value: "La Paz",
+                        child: BodyText("La Paz", color: lightColorScheme.surface),
+                      ),
+                      DropdownMenuItem(
+                        value: "Santa Cruz",
+                        child: BodyText("Santa Cruz", color: lightColorScheme.surface),
+                      ),
+                    ],
+                  ),
+                  RadioGroup(
+                    label: 'Color*',
+                    options: ["Blanco", "Negro", "Gris", "Rojo", "Azul", "Verde", "Plata", "Otro"],
+                  ),
+                  RadioGroupRow(
+                    label: 'Tipo de Vehiculo',
+                    options: ["Sedan", "SUV", "Hatchback"],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

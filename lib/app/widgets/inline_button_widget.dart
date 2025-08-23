@@ -1,11 +1,11 @@
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 
-class SecondaryButton extends StatelessWidget {
+class InlineButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
-  const SecondaryButton({
+  const InlineButton({
     super.key,
     required this.text,
     required this.onPressed,
@@ -21,15 +21,11 @@ class SecondaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: baseStyle?.copyWith(
-          foregroundColor: MaterialStateProperty.all(lightColorScheme.surfaceTint),
           backgroundColor: MaterialStateProperty.all(lightColorScheme.secondary),
+          foregroundColor: MaterialStateProperty.all(lightColorScheme.primary),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: const BorderRadius.all(Radius.circular(15)),
-              side: BorderSide(
-                color: lightColorScheme.primary,
-                width: 2,
-              )
+              borderRadius: const BorderRadius.all(Radius.circular(25)),
             ),
           )
         ),

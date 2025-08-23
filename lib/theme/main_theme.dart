@@ -242,7 +242,7 @@ class MainTheme {
           borderRadius: const BorderRadius.all(Radius.circular(12)),
         ),
         //isDense: true,
-        contentPadding: const EdgeInsets.all(8), // Added this
+        contentPadding: const EdgeInsets.all(12), // Added this
       ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
