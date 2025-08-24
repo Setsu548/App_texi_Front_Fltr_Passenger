@@ -27,7 +27,7 @@ CustomTransitionPage getBuilder(GoRouterState state, {required Widget screen}) {
 final GoRouter appRouter = GoRouter(
   debugLogDiagnostics: true,
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/security/profile_data',
+  initialLocation: '/security/login',
   // redirect: (context, state) async {
   // },
   routes: [

@@ -15,52 +15,47 @@ class ProfileDataView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 60),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        TitleText('Información de Perfil'),
+        SizedBox(height: 10),
+        BodyText('Por favor ingresa tus datos.'),
+        SizedBox(height: 30),
+        CardSecondary(
           children: [
-            TitleText('Información de Perfil'),
-            SizedBox(height: 10),
-            BodyText('Por favor ingresa tus datos.'),
-            SizedBox(height: 30),
-            CardSecondary(
-              children: [
-                LabeledTextField(
-                  label: 'Nombre Completo*', 
-                  hint: 'Ej. Juan Perez Rodriguez'
-                ),
-                LabeledTextField(
-                  label: 'Número de teléfono*', 
-                  hint: '7777777',
-                  prefixText: '+591',
-                ),
-              ],
+            LabeledTextField(
+              label: 'Nombre Completo*', 
+              hint: 'Ej. Juan Perez Rodriguez'
             ),
-            SizedBox(height: 20),
-            PrimaryButton(text: 'Continuar', onPressed: (){}),
-            SizedBox(height: 20),
-            RichText(
-              text: TextSpan(
-                style: Theme.of(context).textTheme.labelLarge,
-                children: [
-                  const TextSpan(text: 'Al continuar aceptas los '),
-                  TextSpan(
-                    text: 'términos, condiciones',
-                    style: TextStyle(color: lightColorScheme.surfaceVariant),
-                    recognizer: TapGestureRecognizer()..onTap = () {},
-                  ),
-                  const TextSpan(text: ' y '),
-                  TextSpan(
-                    text: 'política de privacidad',
-                    style: TextStyle(color: lightColorScheme.surfaceVariant),
-                    recognizer: TapGestureRecognizer()..onTap = () {},
-                  ),
-                ],
-              ),
-            )
+            LabeledTextField(
+              label: 'Número de teléfono*', 
+              hint: '7777777',
+              prefixText: '+591',
+            ),
           ],
         ),
+        SizedBox(height: 20),
+        PrimaryButton(text: 'Continuar', onPressed: (){}),
+        SizedBox(height: 20),
+        RichText(
+          text: TextSpan(
+            style: Theme.of(context).textTheme.labelLarge,
+            children: [
+              const TextSpan(text: 'Al continuar aceptas los '),
+              TextSpan(
+                text: 'términos, condiciones',
+                style: TextStyle(color: lightColorScheme.surfaceVariant),
+                recognizer: TapGestureRecognizer()..onTap = () {},
+              ),
+              const TextSpan(text: ' y '),
+              TextSpan(
+                text: 'política de privacidad',
+                style: TextStyle(color: lightColorScheme.surfaceVariant),
+                recognizer: TapGestureRecognizer()..onTap = () {},
+              ),
+            ],
+          ),
+        )
       ],
     );
   }

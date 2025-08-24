@@ -8,6 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import '../../app/app_router.dart';
+
 class AccountVerificationView extends HookWidget {
   const AccountVerificationView({super.key});
 
@@ -38,7 +40,9 @@ class AccountVerificationView extends HookWidget {
               child: BodyText('Ingresa el código de verificación que enviaremos a tu WhatsApp'),
             ),
             SizedBox(height: 25),
-            PrimaryButton(text: 'Verificar', onPressed: () {}),
+            PrimaryButton(text: 'Verificar', onPressed: () {
+              appRouter.push('/security/profile_data');
+            }),
             SizedBox(height: 25),
             LabelText('¿No recibiste el código?'),
             SizedBox(height: 10),

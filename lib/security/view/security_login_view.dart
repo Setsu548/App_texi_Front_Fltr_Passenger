@@ -32,7 +32,9 @@ class SecurityLoginView extends HookWidget {
         const SizedBox(height: 20),
         PrimaryButton(
                 text: 'Solicitar código', 
-                onPressed: () {}
+                onPressed: () {
+                  appRouter.push('/security/account_verification');
+                }
               ),
         const SizedBox(height: 20),
         ElevatedButton(onPressed: (){
