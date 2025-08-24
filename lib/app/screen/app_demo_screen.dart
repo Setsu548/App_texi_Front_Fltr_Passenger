@@ -4,7 +4,7 @@ import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/danger_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/inline_button_widget.dart';
-import 'package:app_texi_passenger/app/widgets/label_text_primary_widget.dart';
+import 'package:app_texi_passenger/app/widgets/link_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/labeled_dropdown_widget.dart';
@@ -92,7 +92,7 @@ class AppDemoTextsView extends HookWidget {
             ),
             Padding( 
               padding: EdgeInsets.all(10), 
-              child: LabelTextPrimary('LABEL TEXT PRIMARY'),
+              child: LinkTextPrimary('LINK TEXT PRIMARY', onTap: () {},),
             ),
             Container( 
               padding: EdgeInsets.all(10), 

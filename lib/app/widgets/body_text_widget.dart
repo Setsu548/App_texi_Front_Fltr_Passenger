@@ -7,7 +7,7 @@ class BodyText extends StatelessWidget {
   const BodyText(
     this.text, {
     Key? key,
-    this.color
+    this.color,
   }) : super(key: key);
 
   @override
@@ -15,8 +15,9 @@ class BodyText extends StatelessWidget {
     return Text(
       text,
       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-        color: color
-      )
+        color: color,
+      ),
+      textAlign: TextAlign.center,
     );
   }
 }

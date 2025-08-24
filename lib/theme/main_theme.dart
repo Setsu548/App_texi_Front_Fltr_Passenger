@@ -20,7 +20,7 @@ const lightColorScheme = ColorScheme(
   surface: Color(0xFF121212), // Superficies
   onSurface: Color(0xFFFFFFFF),
   outline: Color(0xFF424242), // Bordes grises
-  surfaceVariant: Color.fromARGB(255, 247, 96, 3),
+  surfaceVariant: Color.fromARGB(255, 231, 122, 5),
   surfaceTint: Color(0xFFFFFFFF), // Texto blanco
 );
 

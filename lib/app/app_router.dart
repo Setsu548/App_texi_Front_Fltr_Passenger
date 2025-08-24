@@ -1,3 +1,5 @@
+import 'package:app_texi_passenger/security/screen/account_verification_screen.dart';
+import 'package:app_texi_passenger/security/screen/profile_data_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,7 +27,7 @@ CustomTransitionPage getBuilder(GoRouterState state, {required Widget screen}) {
 final GoRouter appRouter = GoRouter(
   debugLogDiagnostics: true,
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/security/login',
+  initialLocation: '/security/profile_data',
   // redirect: (context, state) async {
   // },
   routes: [
@@ -45,6 +47,26 @@ final GoRouter appRouter = GoRouter(
         return getBuilder(
           state,
           screen: const SecurityLoginScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/security/account_verification',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const AccountVerificationScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/security/profile_data',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const ProfileDataScreen(),
         );
       },
     ),
