@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../app/app_scaffold.dart';
+import '../../app/widgets/label_text_widget.dart';
 import '../view/security_login_view.dart';
 
 class SecurityLoginScreen extends HookWidget {
@@ -15,28 +16,39 @@ class SecurityLoginScreen extends HookWidget {
             onBackButtonPressed: () async {
               return Future.value(true);
             },
-            body: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: MediaQuery.of(context).size.height,
+            body: Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/texiFondo.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20),
-                    Stack(
-                      children: [
-                        Center(
-                          child: Image.asset(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: MediaQuery.of(context).size.height,
+                ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 20),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Image.asset(
                             'assets/images/texi.png',
-                            width: MediaQuery.of(context).size.height * 0.2,
+                            width: MediaQuery.of(context).size.height * 0.4,
                           ),
-                        ),
-                        
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    const SecurityLoginView(),
-                  ],
+                          Padding(
+                            padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height * 0.15)),
+                            child: LabelText('La forma más rapida y segura de viajar'),
+                          ), 
+                        ],
+                      ),
+                      const SecurityLoginView(),
+                    ],
+                  ),
                 ),
               ),
             ),

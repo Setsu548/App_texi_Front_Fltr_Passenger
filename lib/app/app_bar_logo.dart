@@ -1,9 +1,10 @@
+import 'package:app_texi_passenger/app/app_responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class AppBarLogo extends HookWidget implements PreferredSizeWidget {
   AppBarLogo(BuildContext context, {Key? key})
-      : preferredSize = Size.fromHeight(50),
+      : preferredSize = Size.fromHeight(AppResponsive.isSmallScreen(context) ? kToolbarHeight : 120),
         super(key: key);
 
   @override
