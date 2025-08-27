@@ -1,10 +1,10 @@
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 
-class CardSecondary extends StatelessWidget {
+class CardPrimary extends StatelessWidget {
   final List<Widget> children;
 
-  const CardSecondary({
+  const CardPrimary({
     super.key,
     required this.children,
   });
@@ -15,9 +15,13 @@ class CardSecondary extends StatelessWidget {
       width: double.infinity,
       child: Card(
         margin: EdgeInsets.zero,
-        color: lightColorScheme.secondaryContainer,
+        color: lightColorScheme.secondary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
+          side: BorderSide(
+            color: lightColorScheme.secondaryContainer,
+            width: 2
+          )
         ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),

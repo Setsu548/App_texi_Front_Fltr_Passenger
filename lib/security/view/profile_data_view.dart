@@ -1,3 +1,4 @@
+import 'package:app_texi_passenger/app/app_router.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/labeled_text_field_widget.dart';
@@ -35,7 +36,12 @@ class ProfileDataView extends HookWidget {
           ],
         ),
         SizedBox(height: 20),
-        PrimaryButton(text: 'Continuar', onPressed: (){}),
+        PrimaryButton(
+          text: 'Continuar', 
+          onPressed: (){
+            appRouter.go('/travel/travel_request');
+          }
+        ),
         SizedBox(height: 20),
         RichText(
           text: TextSpan(

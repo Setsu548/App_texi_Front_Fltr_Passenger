@@ -1,8 +1,14 @@
 import 'package:app_texi_passenger/app/widgets/body_text_bold_widget.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/card_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/danger_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/double_icon_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/icon_text_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/image_info_card_widget.dart';
+import 'package:app_texi_passenger/app/widgets/info_tile_flat_widget.dart';
+import 'package:app_texi_passenger/app/widgets/info_tile_widget.dart';
 import 'package:app_texi_passenger/app/widgets/inline_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/link_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_secondary_widget.dart';
@@ -12,6 +18,7 @@ import 'package:app_texi_passenger/app/widgets/labeled_text_field_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/radio_group_row_widget.dart';
 import 'package:app_texi_passenger/app/widgets/radio_group_widget.dart';
+import 'package:app_texi_passenger/app/widgets/search_bar_widget.dart';
 import 'package:app_texi_passenger/app/widgets/secondary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/small_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/small_text_widget.dart';
@@ -41,7 +48,7 @@ class AppDemoScreen extends HookWidget {
         AppDemoBtnView(),
         AppDemoCardView(),
         AppDemoFormView(),
-        Center(child: Text("Otros")),
+        AppDemoOthersView(),
       ],
     ),
     bottomBar: SafeArea( // 👈 evita que se pegue a los botones del sistema
@@ -150,6 +157,20 @@ class AppDemoBtnView extends HookWidget {
             InlineButton(
               text: 'Inline Button',
               onPressed: () {},
+            ),
+            SizedBox(height: 10,),
+            IconTextButton(
+              icon: Icons.add,
+              label: 'Icon Text Button',
+              onTap: (){},
+            ),
+            SizedBox(height: 10,),
+            DoubleIconButton(
+              leadingIcon: Icons.send, 
+              title: 'Double Icon Button', 
+              description: 'description', 
+              trailingIcon: Icons.home, 
+              onTap: (){}
             )
           ],
         )
@@ -169,7 +190,46 @@ class AppDemoCardView extends HookWidget {
         padding: EdgeInsets.all(12),
         child: Column(
           children: [
-            CardSecondary(children: [Text('Card Secondary')])
+            CardPrimary(children: [Text('Card Primary')]),
+            SizedBox(height: 10),
+            CardSecondary(children: [Text('Card Secondary')]),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                      InfoTile(
+                        icon: Icons.add,
+                        label: 'Info Tile',
+                        description: 'description',
+                        onTap: () {},
+                      ),
+                      SizedBox(height: 16),
+                      InfoTileFlat(
+                        icon: Icons.restart_alt,
+                        title: 'Info Tile Flat',
+                        description: 'description',
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      ImageInfoCard(
+                        imageUrl: 'assets/images/texi.png',
+                        title: 'Image Info Card',
+                        description: 'description',
+                        price: '0',
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+
           ]
         )
       )
@@ -239,3 +299,30 @@ class AppDemoFormView extends HookWidget {
     );
   }
 }
+
+
+class AppDemoOthersView extends HookWidget {
+  const AppDemoOthersView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.all(12),
+        child: Column(
+          children: [
+            CustomSearchBar(
+              icon: Icons.home,
+              iconColor: lightColorScheme.primary,
+              hintText: 'Custom Search Bar',
+              suggestionsBuilder: (context, controller) {
+                return [];
+              },
+            ),
+          ],
+        )
+      )
+    );
+  }
+}
+

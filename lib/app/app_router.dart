@@ -1,5 +1,7 @@
 import 'package:app_texi_passenger/security/screen/account_verification_screen.dart';
 import 'package:app_texi_passenger/security/screen/profile_data_screen.dart';
+import 'package:app_texi_passenger/travel/screen/destination_selection_screen.dart';
+import 'package:app_texi_passenger/travel/screen/travel_request_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -67,6 +69,26 @@ final GoRouter appRouter = GoRouter(
         return getBuilder(
           state,
           screen: const ProfileDataScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/travel/travel_request',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const TravelRequestScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/travel/destination_selection',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const DestinationSelectionScreen(),
         );
       },
     ),
