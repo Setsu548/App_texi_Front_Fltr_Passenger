@@ -37,7 +37,7 @@ class AccountVerificationView extends HookWidget {
             SizedBox(height: 15),
             Padding(
               padding: EdgeInsetsGeometry.symmetric(horizontal: 30),
-              child: BodyText('Ingresa el código de verificación que enviaremos a tu WhatsApp'),
+              child: BodyText('Ingresa el código de verificación que enviaremos a tu WhatsApp', textAlign: TextAlign.center,),
             ),
             SizedBox(height: 25),
             PrimaryButton(text: 'Verificar', onPressed: () {

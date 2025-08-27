@@ -1,3 +1,4 @@
+import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/info_tile_flat_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
@@ -43,7 +44,7 @@ class DestinationSelectionView extends HookWidget {
 
             return filtered.map((place) {
               return ListTile(
-                title: Text(place['name']!),
+                title: BodyText(place['name']!),
                 onTap: () => controller.closeView(place['name']),
               );
             });

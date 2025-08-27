@@ -12,7 +12,8 @@ class LabelText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.labelLarge
+      style: Theme.of(context).textTheme.labelLarge,
+      softWrap: true,
     );
   }
 }

@@ -26,12 +26,14 @@ class InfoTileFlat extends StatelessWidget {
           color: lightColorScheme.secondaryContainer,
         ),
         const SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            BodyText(title),
-            LabelText(description),
-          ],
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              BodyText(title),
+              LabelText(description),
+            ],
+          ),
         ),
       ],
     );
