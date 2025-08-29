@@ -1,12 +1,17 @@
+import 'package:app_texi_passenger/app/widgets/avatar_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_bold_widget.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_secondary_widget.dart';
+import 'package:app_texi_passenger/app/widgets/card_tertiary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/danger_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/double_icon_button_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/double_icon_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/dual_text_line_widget.dart';
 import 'package:app_texi_passenger/app/widgets/icon_text_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/image_info_card_widget.dart';
+import 'package:app_texi_passenger/app/widgets/info_tile_flat_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/info_tile_flat_widget.dart';
 import 'package:app_texi_passenger/app/widgets/info_tile_widget.dart';
 import 'package:app_texi_passenger/app/widgets/inline_button_widget.dart';
@@ -15,13 +20,16 @@ import 'package:app_texi_passenger/app/widgets/label_text_secondary_widget.dart'
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/labeled_dropdown_widget.dart';
 import 'package:app_texi_passenger/app/widgets/labeled_text_field_widget.dart';
+import 'package:app_texi_passenger/app/widgets/link_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/radio_group_row_widget.dart';
 import 'package:app_texi_passenger/app/widgets/radio_group_widget.dart';
 import 'package:app_texi_passenger/app/widgets/search_bar_widget.dart';
+import 'package:app_texi_passenger/app/widgets/secondary_button_icon_widget.dart';
 import 'package:app_texi_passenger/app/widgets/secondary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/small_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/small_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/star_rating_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
@@ -164,14 +172,28 @@ class AppDemoBtnView extends HookWidget {
               label: 'Icon Text Button',
               onTap: (){},
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             DoubleIconButton(
               leadingIcon: Icons.send, 
               title: 'Double Icon Button', 
               description: 'description', 
               trailingIcon: Icons.home, 
               onTap: (){}
-            )
+            ),
+            SizedBox(height: 10),
+            DoubleIconButtonSecondary(
+              leadingIcon: Icons.home, 
+              title: 'Double Icon Button Secondary', 
+              description: 'description', 
+              trailingIcon: Icons.add, 
+              onTap: (){}
+            ),
+            SizedBox(height: 20),
+            SecondaryButtonIcon(text: 'Secondary Button Icon', onPressed: (){}, icon: Icons.home),
+            SizedBox(height: 10),
+            LinkTextPrimary('Link Text Primary', onTap: (){}),
+            SizedBox(height: 10),
+            LinkTextSecondary('Link Text Secondary', onTap: (){}),
           ],
         )
       )
@@ -194,10 +216,13 @@ class AppDemoCardView extends HookWidget {
             SizedBox(height: 10),
             CardSecondary(children: [Text('Card Secondary')]),
             SizedBox(height: 10),
+            CardTertiary(children: [Text('Card Tertiary')]),
+            SizedBox(height: 10),
             Row(
               children: [
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       InfoTile(
                         icon: Icons.add,
@@ -211,11 +236,18 @@ class AppDemoCardView extends HookWidget {
                         title: 'Info Tile Flat',
                         description: 'description',
                       ),
+                      SizedBox(height: 16),
+                      InfoTileFlatSecondary(
+                        icon: Icons.home,
+                        title: 'Info Tile Flat Secondary',
+                        description: 'description',
+                      ),
                     ],
                   ),
                 ),
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ImageInfoCard(
                         imageUrl: 'assets/images/texi.png',
@@ -229,7 +261,6 @@ class AppDemoCardView extends HookWidget {
                 ),
               ],
             )
-
           ]
         )
       )
@@ -319,6 +350,12 @@ class AppDemoOthersView extends HookWidget {
                 return [];
               },
             ),
+            SizedBox(height: 10),
+            AvatarText(text: 'Avatar Text'),
+            SizedBox(height: 10),
+            DualTextLine(leftText: 'Dual Text', rightText: 'Line'),
+            SizedBox(height: 10),
+            StarRating()
           ],
         )
       )

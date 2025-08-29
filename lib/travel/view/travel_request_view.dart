@@ -86,7 +86,7 @@ class TravelRequestView extends HookWidget {
         PrimaryButton(
           text: 'Solicitar taxi ahora', 
           onPressed: (){
-            
+            appRouter.push('/travel/driver_tracking');
           }
         ),
         SizedBox(height: 30),

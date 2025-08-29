@@ -3,13 +3,13 @@ import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 
-class InfoTileFlat extends StatelessWidget {
+class InfoTileFlatSecondary extends StatelessWidget {
   final IconData icon;
   final String title;
   final String description;
   final Color? colorIcon;
 
-  const InfoTileFlat({
+  const InfoTileFlatSecondary({
     Key? key,
     required this.icon,
     required this.title,
@@ -32,8 +32,8 @@ class InfoTileFlat extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BodyText(title),
-              LabelText(description),
+              LabelText(title),
+              BodyText(description),
             ],
           ),
         ),
