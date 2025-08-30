@@ -1,3 +1,4 @@
+import 'package:app_texi_passenger/app/app_router.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/dual_text_line_widget.dart';
 import 'package:app_texi_passenger/app/widgets/info_tile_flat_secondary_widget.dart';
@@ -49,7 +50,9 @@ class DriverTrackingView extends HookWidget {
           description: 'Terminal de Buses, Av. Ayacucho'
         ),
         SizedBox(height: 30),
-        SecondaryButton(text: 'Cancelar Viaje', onPressed: (){})
+        SecondaryButton(text: 'Cancelar Viaje', onPressed: (){
+          appRouter.push('/travel/ongoing_trip');
+        })
       ],
     );
   }
