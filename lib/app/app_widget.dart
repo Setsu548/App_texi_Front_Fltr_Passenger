@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import '../l10n/generated/l10n.dart';
 import '../theme/main_theme.dart';
 import 'app_router.dart';
 
@@ -21,13 +23,13 @@ class _AppState extends State<App> {
           routerDelegate: appRouter.routerDelegate,
           theme: MainTheme.light(),
           darkTheme: MainTheme.light(),
-          // localizationsDelegates: [
-          //   AppLocalizations.delegate,
-          //   GlobalMaterialLocalizations.delegate,
-          //   GlobalWidgetsLocalizations.delegate,
-          //   GlobalCupertinoLocalizations.delegate,
-          // ],
-          // supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
           debugShowCheckedModeBanner: false,
         ),
       );

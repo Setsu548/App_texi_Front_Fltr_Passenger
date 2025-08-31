@@ -1,3 +1,4 @@
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../app/app_scaffold.dart';
@@ -42,7 +43,7 @@ class SecurityLoginScreen extends HookWidget {
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height * 0.15)),
-                            child: LabelText('La forma más rapida y segura de viajar'),
+                            child: LabelText(context.intl.labelFastestSafestTravel),
                           ), 
                         ],
                       ),
