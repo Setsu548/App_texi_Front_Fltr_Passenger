@@ -4,6 +4,7 @@ import 'package:app_texi_passenger/app/widgets/info_tile_flat_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/search_bar_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -29,12 +30,12 @@ class DestinationSelectionView extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TitleText('Selecciona tu destino'),
+        TitleText(context.intl.titleSelectYourDestination),
         SizedBox(height: 30),
         CustomSearchBar(
           icon: Icons.send,
           iconColor: lightColorScheme.surfaceVariant,
-          hintText: 'Ingresa tu dirección',
+          hintText: context.intl.hintEnterYourAddress,
           suggestionsBuilder: (context, controller) {
             final input = controller.value.text.toLowerCase();
             if (input.isEmpty) return [];
@@ -77,7 +78,7 @@ class DestinationSelectionView extends HookWidget {
           }),
         ),
         SizedBox(height: 20),
-        PrimaryButton(text: 'Continuar', onPressed: (){})
+        PrimaryButton(text: context.intl.btnContinue, onPressed: (){})
       ],
     );
   }

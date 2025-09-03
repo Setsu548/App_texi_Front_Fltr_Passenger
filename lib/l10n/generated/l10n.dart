@@ -121,6 +121,342 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'La forma más rapida y segura de viajar'**
   String get labelFastestSafestTravel;
+
+  /// No description provided for @bodyMsgSendAccessCode.
+  ///
+  /// In es, this message translates to:
+  /// **'TE ENVIAREMOS UN CÓDIGO DE ACCESO'**
+  String get bodyMsgSendAccessCode;
+
+  /// No description provided for @hintEnterYourNumber.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa tu número'**
+  String get hintEnterYourNumber;
+
+  /// No description provided for @buttonRequestCode.
+  ///
+  /// In es, this message translates to:
+  /// **'Solicitar código'**
+  String get buttonRequestCode;
+
+  /// No description provided for @titleAccountVerification.
+  ///
+  /// In es, this message translates to:
+  /// **'Verificación de cuenta'**
+  String get titleAccountVerification;
+
+  /// No description provided for @bodyEnterVerificationCode.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa el código de verificación que enviaremos a tu WhatsApp'**
+  String get bodyEnterVerificationCode;
+
+  /// No description provided for @btnVerify.
+  ///
+  /// In es, this message translates to:
+  /// **'Verificar'**
+  String get btnVerify;
+
+  /// No description provided for @labelDidNotReceiveCode.
+  ///
+  /// In es, this message translates to:
+  /// **'¿No recibiste el código?'**
+  String get labelDidNotReceiveCode;
+
+  /// No description provided for @linkResendCode.
+  ///
+  /// In es, this message translates to:
+  /// **'Reenviar código'**
+  String get linkResendCode;
+
+  /// No description provided for @titleProfileInformation.
+  ///
+  /// In es, this message translates to:
+  /// **'Información de Perfil'**
+  String get titleProfileInformation;
+
+  /// No description provided for @bodyPleaseEnterYourData.
+  ///
+  /// In es, this message translates to:
+  /// **'Por favor ingresa tus datos.'**
+  String get bodyPleaseEnterYourData;
+
+  /// No description provided for @labelFullNameRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre Completo*'**
+  String get labelFullNameRequired;
+
+  /// No description provided for @hintFullNameExample.
+  ///
+  /// In es, this message translates to:
+  /// **'Ej. Juan Perez Rodriguez'**
+  String get hintFullNameExample;
+
+  /// No description provided for @labelPhoneNumberRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'Número de teléfono*'**
+  String get labelPhoneNumberRequired;
+
+  /// No description provided for @btnContinue.
+  ///
+  /// In es, this message translates to:
+  /// **'Continuar'**
+  String get btnContinue;
+
+  /// No description provided for @bodyContinueAcceptsPrefix.
+  ///
+  /// In es, this message translates to:
+  /// **'Al continuar aceptas los '**
+  String get bodyContinueAcceptsPrefix;
+
+  /// No description provided for @linkTermsConditions.
+  ///
+  /// In es, this message translates to:
+  /// **'términos, condiciones'**
+  String get linkTermsConditions;
+
+  /// No description provided for @bodyAndConnector.
+  ///
+  /// In es, this message translates to:
+  /// **' y '**
+  String get bodyAndConnector;
+
+  /// No description provided for @linkPrivacyPolicy.
+  ///
+  /// In es, this message translates to:
+  /// **'política de privacidad'**
+  String get linkPrivacyPolicy;
+
+  /// No description provided for @titleRequestTrip.
+  ///
+  /// In es, this message translates to:
+  /// **'Solicitar Viaje'**
+  String get titleRequestTrip;
+
+  /// No description provided for @labelDestination.
+  ///
+  /// In es, this message translates to:
+  /// **'Destino'**
+  String get labelDestination;
+
+  /// No description provided for @labelSavedDestinations.
+  ///
+  /// In es, this message translates to:
+  /// **'Destinos Guardados'**
+  String get labelSavedDestinations;
+
+  /// No description provided for @titleSelectYourVehicle.
+  ///
+  /// In es, this message translates to:
+  /// **'Selecciona tu vehículo'**
+  String get titleSelectYourVehicle;
+
+  /// No description provided for @btnRequestTaxiNow.
+  ///
+  /// In es, this message translates to:
+  /// **'Solicitar taxi ahora'**
+  String get btnRequestTaxiNow;
+
+  /// No description provided for @titleRequestVehicleFromOperator.
+  ///
+  /// In es, this message translates to:
+  /// **'Solicita un vehículo a la Operadora'**
+  String get titleRequestVehicleFromOperator;
+
+  /// No description provided for @titleCallTexiOperator.
+  ///
+  /// In es, this message translates to:
+  /// **'Llamar Operador TEXI'**
+  String get titleCallTexiOperator;
+
+  /// No description provided for @descTexiCentral.
+  ///
+  /// In es, this message translates to:
+  /// **'Central TEXI'**
+  String get descTexiCentral;
+
+  /// No description provided for @titleSelectYourDestination.
+  ///
+  /// In es, this message translates to:
+  /// **'Selecciona tu destino'**
+  String get titleSelectYourDestination;
+
+  /// No description provided for @hintEnterYourAddress.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa tu dirección'**
+  String get hintEnterYourAddress;
+
+  /// No description provided for @titleRealTimeTracking.
+  ///
+  /// In es, this message translates to:
+  /// **'Seguimiento en tiempo real'**
+  String get titleRealTimeTracking;
+
+  /// No description provided for @labelDriverOnTheWay.
+  ///
+  /// In es, this message translates to:
+  /// **'Tu conductor está en camino'**
+  String get labelDriverOnTheWay;
+
+  /// No description provided for @labelEstimatedArrivalTime.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo estimado de llegada'**
+  String get labelEstimatedArrivalTime;
+
+  /// No description provided for @rightTextOnTheWay.
+  ///
+  /// In es, this message translates to:
+  /// **'En camino'**
+  String get rightTextOnTheWay;
+
+  /// No description provided for @bodyTripDetails.
+  ///
+  /// In es, this message translates to:
+  /// **'Detalles del viaje'**
+  String get bodyTripDetails;
+
+  /// No description provided for @labelOrigin.
+  ///
+  /// In es, this message translates to:
+  /// **'Origen'**
+  String get labelOrigin;
+
+  /// No description provided for @titleTripInProgress.
+  ///
+  /// In es, this message translates to:
+  /// **'Viaje en curso'**
+  String get titleTripInProgress;
+
+  /// No description provided for @labelEstimatedDistance.
+  ///
+  /// In es, this message translates to:
+  /// **'Distancia estimada'**
+  String get labelEstimatedDistance;
+
+  /// No description provided for @labelEstimatedTime.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo estimado'**
+  String get labelEstimatedTime;
+
+  /// No description provided for @labelFare.
+  ///
+  /// In es, this message translates to:
+  /// **'Tarifa'**
+  String get labelFare;
+
+  /// No description provided for @btnSafeTrip.
+  ///
+  /// In es, this message translates to:
+  /// **'Viaje seguro'**
+  String get btnSafeTrip;
+
+  /// No description provided for @titleTripSafety.
+  ///
+  /// In es, this message translates to:
+  /// **'Seguridad en viaje'**
+  String get titleTripSafety;
+
+  /// No description provided for @labelShareLocationAndEmergency.
+  ///
+  /// In es, this message translates to:
+  /// **'Comparte tu ubicación y acude a contactos de emergencia'**
+  String get labelShareLocationAndEmergency;
+
+  /// No description provided for @titleFrequentContacts.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos frecuentes'**
+  String get titleFrequentContacts;
+
+  /// No description provided for @btnShareRealTimeLocation.
+  ///
+  /// In es, this message translates to:
+  /// **'Compartir ubicación en tiempo real'**
+  String get btnShareRealTimeLocation;
+
+  /// No description provided for @titleEmergencyContacts.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos de emergencia'**
+  String get titleEmergencyContacts;
+
+  /// No description provided for @titleTexi.
+  ///
+  /// In es, this message translates to:
+  /// **'TEXI'**
+  String get titleTexi;
+
+  /// No description provided for @descTexiCustomerService.
+  ///
+  /// In es, this message translates to:
+  /// **'Atención al cliente'**
+  String get descTexiCustomerService;
+
+  /// No description provided for @titleTechnicalSupport.
+  ///
+  /// In es, this message translates to:
+  /// **'Soporte técnico'**
+  String get titleTechnicalSupport;
+
+  /// No description provided for @descCallTechnicalSupport.
+  ///
+  /// In es, this message translates to:
+  /// **'Llama soporte técnico'**
+  String get descCallTechnicalSupport;
+
+  /// No description provided for @titleEmergencies.
+  ///
+  /// In es, this message translates to:
+  /// **'EMERGENCIAS'**
+  String get titleEmergencies;
+
+  /// No description provided for @descCallEmergencies.
+  ///
+  /// In es, this message translates to:
+  /// **'Llamar emergencias'**
+  String get descCallEmergencies;
+
+  /// No description provided for @btnBack.
+  ///
+  /// In es, this message translates to:
+  /// **'Volver'**
+  String get btnBack;
+
+  /// No description provided for @titleHowWasYourTrip.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Cómo fue tu viaje?'**
+  String get titleHowWasYourTrip;
+
+  /// No description provided for @labelAdditionalCommentsOptional.
+  ///
+  /// In es, this message translates to:
+  /// **'Comentarios adicionales (opcional)'**
+  String get labelAdditionalCommentsOptional;
+
+  /// No description provided for @hintTellUsMoreAboutExperience.
+  ///
+  /// In es, this message translates to:
+  /// **'Cuéntanos más sobre tu experiencia...'**
+  String get hintTellUsMoreAboutExperience;
+
+  /// No description provided for @btnSubmitRating.
+  ///
+  /// In es, this message translates to:
+  /// **'Enviar calificación'**
+  String get btnSubmitRating;
+
+  /// No description provided for @linkSkipForNow.
+  ///
+  /// In es, this message translates to:
+  /// **'Omitir por ahora'**
+  String get linkSkipForNow;
 }
 
 class _AppLocalizationsDelegate

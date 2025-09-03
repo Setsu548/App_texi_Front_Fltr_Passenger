@@ -20,9 +20,9 @@ class DriverTrackingView extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TitleText('Seguimiento en tiempo real'),
+        TitleText(context.intl.titleRealTimeTracking),
         SizedBox(height: 10),
-        LabelText('Tu conductor esta en camino'),
+        LabelText(context.intl.labelDriverOnTheWay),
         SizedBox(height: 30),
         InfoTileFlat(
           icon: Icons.car_crash_outlined, 
@@ -31,27 +31,27 @@ class DriverTrackingView extends HookWidget {
           description: 'ABC-123'
         ),
         SizedBox(height: 10),
-        LabelText('Tiempo estimado de llegada'),
+        LabelText(context.intl.labelEstimatedArrivalTime),
         SizedBox(height: 10),
-        DualTextLine(leftText: '5 minutos', rightText: 'En camino'),
+        DualTextLine(leftText: '5 minutos', rightText: context.intl.rightTextOnTheWay),
         SizedBox(height: 10),
-        BodyText('Detalles del viaje'),
+        BodyText(context.intl.bodyTripDetails),
         SizedBox(height: 10),
         InfoTileFlatSecondary(
           icon: Icons.send, 
           colorIcon: lightColorScheme.surfaceVariant,
-          title: 'Origen', 
+          title: context.intl.labelOrigin, 
           description: 'Av. America 1240, Cochabamba'
         ),
         SizedBox(height: 10),
         InfoTileFlatSecondary(
           icon: Icons.flag, 
           colorIcon: lightColorScheme.surfaceVariant,
-          title: 'Destino', 
+          title: context.intl.labelDestination, 
           description: 'Terminal de Buses, Av. Ayacucho'
         ),
         SizedBox(height: 30),
-        SecondaryButton(text: 'Cancelar Viaje', onPressed: (){
+        SecondaryButton(text: context.intl.commonCancel, onPressed: (){
           appRouter.push('/travel/ongoing_trip');
         })
       ],

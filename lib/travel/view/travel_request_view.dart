@@ -6,6 +6,7 @@ import 'package:app_texi_passenger/app/widgets/info_tile_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -33,13 +34,13 @@ class TravelRequestView extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TitleText('Solicitar Viaje'),
+        TitleText(context.intl.titleRequestTrip),
         SizedBox(height: 30),
-        IconTextButton(icon: Icons.send, label: 'Destino', onTap: (){
+        IconTextButton(icon: Icons.send, label: context.intl.labelDestination, onTap: (){
           appRouter.push('/travel/destination_selection');
         }),
         SizedBox(height: 10),
-        LabelText('Destinos Guardados'),
+        LabelText(context.intl.labelSavedDestinations),
         SizedBox(height: 10),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -59,7 +60,7 @@ class TravelRequestView extends HookWidget {
           ),
         ),
         SizedBox(height: 30),
-        TitleText('Selecciona tu vehiculo'),
+        TitleText(context.intl.titleSelectYourVehicle),
         SizedBox(height: 10),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -84,18 +85,18 @@ class TravelRequestView extends HookWidget {
         ),
         SizedBox(height: 30),
         PrimaryButton(
-          text: 'Solicitar taxi ahora', 
+          text: context.intl.btnRequestTaxiNow, 
           onPressed: (){
             appRouter.push('/travel/driver_tracking');
           }
         ),
         SizedBox(height: 30),
-        TitleText('Solicita un vehiculo a la Operadora'),
+        TitleText(context.intl.titleRequestVehicleFromOperator),
         SizedBox(height: 20),
         DoubleIconButton(
           leadingIcon: Icons.local_taxi,
-          title: 'Llamar Operador TEXI',
-          description: 'Central TEXI',
+          title: context.intl.titleCallTexiOperator,
+          description: context.intl.descTexiCentral,
           trailingIcon: Icons.call,
           onTap: () {},
         )

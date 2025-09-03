@@ -1,3 +1,4 @@
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -14,7 +15,7 @@ class SecurityLoginView extends HookWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(children: [
-        BodyText('TE ENVIAREMOS UN CÓDIGO DE ACCESO'),
+        BodyText(context.intl.bodyMsgSendAccessCode),
         const SizedBox(height: 20),
         InternationalPhoneNumberInput(
           onInputChanged: (PhoneNumber number) {
@@ -25,13 +26,13 @@ class SecurityLoginView extends HookWidget {
           ),
           initialValue: PhoneNumber(isoCode: 'BO'),
           textFieldController: TextEditingController(),
-          inputDecoration: const InputDecoration(
-            hintText: "Ingresa tu número",
+          inputDecoration: InputDecoration(
+            hintText: context.intl.hintEnterYourNumber,
           ),
         ),
         const SizedBox(height: 20),
         PrimaryButton(
-                text: 'Solicitar código', 
+                text: context.intl.buttonRequestCode, 
                 onPressed: () {
                   appRouter.push('/security/account_verification');
                 }

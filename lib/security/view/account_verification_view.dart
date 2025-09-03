@@ -3,6 +3,7 @@ import 'package:app_texi_passenger/app/widgets/link_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,20 +34,20 @@ class AccountVerificationView extends HookWidget {
               ),
             ),
             SizedBox(height: 25),
-            TitleText('Verificación de cuenta'),
+            TitleText(context.intl.titleAccountVerification),
             SizedBox(height: 15),
             Padding(
               padding: EdgeInsetsGeometry.symmetric(horizontal: 30),
-              child: BodyText('Ingresa el código de verificación que enviaremos a tu WhatsApp', textAlign: TextAlign.center,),
+              child: BodyText(context.intl.bodyEnterVerificationCode, textAlign: TextAlign.center,),
             ),
             SizedBox(height: 25),
-            PrimaryButton(text: 'Verificar', onPressed: () {
+            PrimaryButton(text: context.intl.btnVerify, onPressed: () {
               appRouter.push('/security/profile_data');
             }),
             SizedBox(height: 25),
-            LabelText('¿No recibiste el código?'),
+            LabelText(context.intl.labelDidNotReceiveCode),
             SizedBox(height: 10),
-            LinkTextPrimary('Reenviar código', onTap: (){},)
+            LinkTextPrimary(context.intl.linkResendCode, onTap: (){},)
           ],
         ),
       ],

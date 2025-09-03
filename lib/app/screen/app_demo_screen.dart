@@ -8,6 +8,7 @@ import 'package:app_texi_passenger/app/widgets/card_tertiary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/danger_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/double_icon_button_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/double_icon_button_widget.dart';
+import 'package:app_texi_passenger/app/widgets/driver_info_widget.dart';
 import 'package:app_texi_passenger/app/widgets/dual_text_line_widget.dart';
 import 'package:app_texi_passenger/app/widgets/icon_text_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/image_info_card_widget.dart';
@@ -355,7 +356,15 @@ class AppDemoOthersView extends HookWidget {
             SizedBox(height: 10),
             DualTextLine(leftText: 'Dual Text', rightText: 'Line'),
             SizedBox(height: 10),
-            StarRating()
+            StarRating(),
+            SizedBox(height: 10),
+            DriverInfo(
+              personName: "Driver Info",
+              vehicleName: "Toyota Corolla - Gris",
+              licensePlate: "ABC-123",
+              avatarUrl: "assets/images/texi.png",
+              rating: 4.8,
+            ),
           ],
         )
       )

@@ -3,6 +3,7 @@ import 'package:app_texi_passenger/app/widgets/link_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/star_rating_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -17,7 +18,7 @@ class TravelRatingView extends HookWidget {
       children: [
         SizedBox(height: 30),
         Center(
-          child: TitleText('¿Cómo fue tu viaje?'),
+          child: TitleText(context.intl.titleHowWasYourTrip),
         ),
         SizedBox(height: 20),
         Center(
@@ -26,12 +27,12 @@ class TravelRatingView extends HookWidget {
           ),
         ),
         SizedBox(height: 20),
-        LabelText('Comentarios adicionales (opcional)'),
+        LabelText(context.intl.labelAdditionalCommentsOptional),
         SizedBox(height: 10),
         TextField(
           maxLines: 5, 
           decoration: InputDecoration(
-            hintText: 'Cuentanos mas sobre tu experiencia...',
+            hintText: context.intl.hintTellUsMoreAboutExperience,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -39,9 +40,9 @@ class TravelRatingView extends HookWidget {
           ),
         ),
         SizedBox(height: 30),
-        PrimaryButton(text: 'Enviar calificacion', onPressed: (){}),
+        PrimaryButton(text: context.intl.btnSubmitRating, onPressed: (){}),
         SizedBox(height: 30),
-        Center(child: LinkTextSecondary('Omitir por ahora', onTap: (){}))
+        Center(child: LinkTextSecondary(context.intl.linkSkipForNow, onTap: (){}))
       ],
     );
   }

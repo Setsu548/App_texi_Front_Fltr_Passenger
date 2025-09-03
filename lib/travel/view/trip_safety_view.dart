@@ -5,6 +5,7 @@ import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/secondary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -18,11 +19,11 @@ class TripSafetyView extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TitleText('Seguridad en viaje'),
+        TitleText(context.intl.titleTripSafety),
         SizedBox(height: 10),
-        LabelText('Comparte tu ubicacion y acude a contactos de emergencia'),
+        LabelText(context.intl.labelShareLocationAndEmergency),
         SizedBox(height: 10),
-        TitleText('Contactos frecuentes'),
+        TitleText(context.intl.titleFrequentContacts),
         SizedBox(height: 20),
         SizedBox(
           width: double.infinity, 
@@ -43,26 +44,26 @@ class TripSafetyView extends HookWidget {
         ),
         SizedBox(height: 20),
         PrimaryButton(
-          text: 'Compartir ubicacion en tiempor real', 
+          text: context.intl.btnShareRealTimeLocation, 
           onPressed: (){
             appRouter.push('/travel/travel_rating');
           }
         ),
         SizedBox(height: 30),
-        TitleText('Contactos de emergencia'),
+        TitleText(context.intl.titleEmergencyContacts),
         SizedBox(height: 20),
         DoubleIconButtonSecondary(
           leadingIcon: Icons.car_crash,
-          title: "TEXI",
-          description: "Atencion al cliente",
+          title: context.intl.titleTexi,
+          description: context.intl.descTexiCustomerService,
           trailingIcon: Icons.call,
           onTap: () {},     
         ),
         SizedBox(height: 10),
         DoubleIconButtonSecondary(
           leadingIcon: Icons.support_agent,
-          title: "Soporte tecnico",
-          description: "Llama soporte tecnico",
+          title: context.intl.titleTechnicalSupport,
+          description: context.intl.descCallTechnicalSupport,
           trailingIcon: Icons.call,
           onTap: () {},
           leadingBackgroundColor: lightColorScheme.surfaceVariant,        
@@ -71,8 +72,8 @@ class TripSafetyView extends HookWidget {
         SizedBox(height: 10),
         DoubleIconButtonSecondary(
           leadingIcon: Icons.warning,
-          title: "EMERGENCIAS",
-          description: "Llamar emergencias",
+          title: context.intl.titleEmergencies,
+          description: context.intl.descCallEmergencies,
           trailingIcon: Icons.call,
           onTap: () {},
           leadingBackgroundColor: lightColorScheme.error,     
@@ -82,7 +83,7 @@ class TripSafetyView extends HookWidget {
         ),
         SizedBox(height: 30),
         SecondaryButton(
-          text: 'Volver', 
+          text: context.intl.btnBack, 
           onPressed: (){
             appRouter.push('/travel/ongoing_trip');
           }

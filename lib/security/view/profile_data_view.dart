@@ -4,6 +4,7 @@ import 'package:app_texi_passenger/app/widgets/card_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/labeled_text_field_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
@@ -18,18 +19,18 @@ class ProfileDataView extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TitleText('Información de Perfil'),
+        TitleText(context.intl.titleProfileInformation),
         SizedBox(height: 10),
-        BodyText('Por favor ingresa tus datos.'),
+        BodyText(context.intl.bodyPleaseEnterYourData),
         SizedBox(height: 30),
         CardSecondary(
           children: [
             LabeledTextField(
-              label: 'Nombre Completo*', 
-              hint: 'Ej. Juan Perez Rodriguez'
+              label: context.intl.labelFullNameRequired, 
+              hint: context.intl.hintFullNameExample
             ),
             LabeledTextField(
-              label: 'Número de teléfono*', 
+              label: context.intl.labelPhoneNumberRequired, 
               hint: '7777777',
               prefixText: '+591',
             ),
@@ -37,7 +38,7 @@ class ProfileDataView extends HookWidget {
         ),
         SizedBox(height: 20),
         PrimaryButton(
-          text: 'Continuar', 
+          text: context.intl.btnContinue, 
           onPressed: (){
             appRouter.go('/travel/travel_request');
           }
@@ -47,15 +48,15 @@ class ProfileDataView extends HookWidget {
           text: TextSpan(
             style: Theme.of(context).textTheme.labelLarge,
             children: [
-              const TextSpan(text: 'Al continuar aceptas los '),
+              TextSpan(text: context.intl.bodyContinueAcceptsPrefix),
               TextSpan(
-                text: 'términos, condiciones',
+                text: context.intl.linkTermsConditions,
                 style: TextStyle(color: lightColorScheme.surfaceVariant),
                 recognizer: TapGestureRecognizer()..onTap = () {},
               ),
-              const TextSpan(text: ' y '),
+              TextSpan(text: context.intl.bodyAndConnector),
               TextSpan(
-                text: 'política de privacidad',
+                text: context.intl.linkPrivacyPolicy,
                 style: TextStyle(color: lightColorScheme.surfaceVariant),
                 recognizer: TapGestureRecognizer()..onTap = () {},
               ),
