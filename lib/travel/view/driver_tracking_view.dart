@@ -7,9 +7,9 @@ import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/secondary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
 import 'package:app_texi_passenger/l10n/l10n_extension.dart';
-import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import '../../theme/main_theme.dart';
 
 class DriverTrackingView extends HookWidget {
   const DriverTrackingView({super.key});

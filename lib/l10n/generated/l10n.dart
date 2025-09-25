@@ -457,6 +457,408 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Omitir por ahora'**
   String get linkSkipForNow;
+
+  /// No description provided for @sideMenuItemProfile.
+  ///
+  /// In es, this message translates to:
+  /// **'Perfil'**
+  String get sideMenuItemProfile;
+
+  /// No description provided for @sideMenuItemHistory.
+  ///
+  /// In es, this message translates to:
+  /// **'Historial'**
+  String get sideMenuItemHistory;
+
+  /// No description provided for @sideMenuItemDestinations.
+  ///
+  /// In es, this message translates to:
+  /// **'Destinos'**
+  String get sideMenuItemDestinations;
+
+  /// No description provided for @sideMenuItemOperatorTexi.
+  ///
+  /// In es, this message translates to:
+  /// **'Operador TEXI'**
+  String get sideMenuItemOperatorTexi;
+
+  /// No description provided for @sideMenuItemContacts.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos'**
+  String get sideMenuItemContacts;
+
+  /// No description provided for @sideMenuItemLogout.
+  ///
+  /// In es, this message translates to:
+  /// **'SALIR'**
+  String get sideMenuItemLogout;
+
+  /// No description provided for @titleProfileView.
+  ///
+  /// In es, this message translates to:
+  /// **'Perfil de Pasajero'**
+  String get titleProfileView;
+
+  /// No description provided for @bodyProfileViewPersonalInfo.
+  ///
+  /// In es, this message translates to:
+  /// **'Información personal'**
+  String get bodyProfileViewPersonalInfo;
+
+  /// No description provided for @labelProfileViewName.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre'**
+  String get labelProfileViewName;
+
+  /// No description provided for @labelProfileViewPhone.
+  ///
+  /// In es, this message translates to:
+  /// **'Teléfono'**
+  String get labelProfileViewPhone;
+
+  /// No description provided for @linkProfileViewEditInfo.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar información'**
+  String get linkProfileViewEditInfo;
+
+  /// No description provided for @bodyProfileViewSettings.
+  ///
+  /// In es, this message translates to:
+  /// **'Configuración'**
+  String get bodyProfileViewSettings;
+
+  /// No description provided for @labelProfileViewLanguage.
+  ///
+  /// In es, this message translates to:
+  /// **'Idioma'**
+  String get labelProfileViewLanguage;
+
+  /// No description provided for @optionProfileViewLanguageSpanish.
+  ///
+  /// In es, this message translates to:
+  /// **'Español'**
+  String get optionProfileViewLanguageSpanish;
+
+  /// No description provided for @labelProfileViewDarkMode.
+  ///
+  /// In es, this message translates to:
+  /// **'Modo oscuro'**
+  String get labelProfileViewDarkMode;
+
+  /// No description provided for @labelProfileViewNotifications.
+  ///
+  /// In es, this message translates to:
+  /// **'Notificaciones'**
+  String get labelProfileViewNotifications;
+
+  /// No description provided for @bodyProfileViewPaymentMethods.
+  ///
+  /// In es, this message translates to:
+  /// **'Métodos de pago'**
+  String get bodyProfileViewPaymentMethods;
+
+  /// No description provided for @labelProfileViewCash.
+  ///
+  /// In es, this message translates to:
+  /// **'Efectivo'**
+  String get labelProfileViewCash;
+
+  /// No description provided for @linkProfileViewAddPaymentMethod.
+  ///
+  /// In es, this message translates to:
+  /// **'Agregar método de pago'**
+  String get linkProfileViewAddPaymentMethod;
+
+  /// No description provided for @btnProfileViewLogout.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar sesión'**
+  String get btnProfileViewLogout;
+
+  /// No description provided for @btnProfileViewBack.
+  ///
+  /// In es, this message translates to:
+  /// **'Volver'**
+  String get btnProfileViewBack;
+
+  /// No description provided for @titleTravelHistoryView.
+  ///
+  /// In es, this message translates to:
+  /// **'Historial de viajes'**
+  String get titleTravelHistoryView;
+
+  /// No description provided for @labelTravelHistorySelectedDate.
+  ///
+  /// In es, this message translates to:
+  /// **'Fecha seleccionada:'**
+  String get labelTravelHistorySelectedDate;
+
+  /// No description provided for @bodyTravelHistoryTripsMade.
+  ///
+  /// In es, this message translates to:
+  /// **'Viajes realizados'**
+  String get bodyTravelHistoryTripsMade;
+
+  /// No description provided for @statusTripCompleted.
+  ///
+  /// In es, this message translates to:
+  /// **'Completado'**
+  String get statusTripCompleted;
+
+  /// No description provided for @titleSavedDestinationsView.
+  ///
+  /// In es, this message translates to:
+  /// **'Destinos Guardados'**
+  String get titleSavedDestinationsView;
+
+  /// No description provided for @bodySavedDestinationsFavorites.
+  ///
+  /// In es, this message translates to:
+  /// **'Favoritos'**
+  String get bodySavedDestinationsFavorites;
+
+  /// No description provided for @linkSavedDestinationsEdit.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar'**
+  String get linkSavedDestinationsEdit;
+
+  /// No description provided for @btnSavedPlaceCardRequestRide.
+  ///
+  /// In es, this message translates to:
+  /// **'Solicitar viaje'**
+  String get btnSavedPlaceCardRequestRide;
+
+  /// No description provided for @bodySavedDestinationsRecent.
+  ///
+  /// In es, this message translates to:
+  /// **'Recientes'**
+  String get bodySavedDestinationsRecent;
+
+  /// No description provided for @linkSavedDestinationsSeeAll.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver todos'**
+  String get linkSavedDestinationsSeeAll;
+
+  /// No description provided for @bodySavedDestinationsCreateNew.
+  ///
+  /// In es, this message translates to:
+  /// **'Crear nuevo destino'**
+  String get bodySavedDestinationsCreateNew;
+
+  /// No description provided for @hintSearchPlaceField.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar dirección o lugar'**
+  String get hintSearchPlaceField;
+
+  /// No description provided for @labelSavedDestinationsSaveAs.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar como'**
+  String get labelSavedDestinationsSaveAs;
+
+  /// No description provided for @optionSavedDestinationsHome.
+  ///
+  /// In es, this message translates to:
+  /// **'Casa'**
+  String get optionSavedDestinationsHome;
+
+  /// No description provided for @optionSavedDestinationsWork.
+  ///
+  /// In es, this message translates to:
+  /// **'Trabajo'**
+  String get optionSavedDestinationsWork;
+
+  /// No description provided for @optionSavedDestinationsOther.
+  ///
+  /// In es, this message translates to:
+  /// **'Otro'**
+  String get optionSavedDestinationsOther;
+
+  /// No description provided for @btnSavedDestinationsSave.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar destino'**
+  String get btnSavedDestinationsSave;
+
+  /// No description provided for @titleOperatorTexiView.
+  ///
+  /// In es, this message translates to:
+  /// **'Operador TEXI'**
+  String get titleOperatorTexiView;
+
+  /// No description provided for @bodyOperatorTexiSendMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Envíanos un mensaje'**
+  String get bodyOperatorTexiSendMessage;
+
+  /// No description provided for @labelOperatorTexiFullName.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre completo'**
+  String get labelOperatorTexiFullName;
+
+  /// No description provided for @hintOperatorTexiFullName.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa tu nombre completo'**
+  String get hintOperatorTexiFullName;
+
+  /// No description provided for @labelOperatorTexiInquiryType.
+  ///
+  /// In es, this message translates to:
+  /// **'Tipo de consulta'**
+  String get labelOperatorTexiInquiryType;
+
+  /// No description provided for @hintOperatorTexiInquiryType.
+  ///
+  /// In es, this message translates to:
+  /// **'Consulta general'**
+  String get hintOperatorTexiInquiryType;
+
+  /// No description provided for @labelOperatorTexiMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Mensaje'**
+  String get labelOperatorTexiMessage;
+
+  /// No description provided for @hintOperatorTexiMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Escribe tu mensaje aquí...'**
+  String get hintOperatorTexiMessage;
+
+  /// No description provided for @btnOperatorTexiSendMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Enviar mensaje'**
+  String get btnOperatorTexiSendMessage;
+
+  /// No description provided for @bodyOperatorTexiCallHours.
+  ///
+  /// In es, this message translates to:
+  /// **'Horarios de atención para llamadas'**
+  String get bodyOperatorTexiCallHours;
+
+  /// No description provided for @labelOperatorTexiMonFri.
+  ///
+  /// In es, this message translates to:
+  /// **'Lunes a Viernes'**
+  String get labelOperatorTexiMonFri;
+
+  /// No description provided for @labelOperatorTexiSaturday.
+  ///
+  /// In es, this message translates to:
+  /// **'Sábados'**
+  String get labelOperatorTexiSaturday;
+
+  /// No description provided for @labelOperatorTexiSunday.
+  ///
+  /// In es, this message translates to:
+  /// **'Domingos'**
+  String get labelOperatorTexiSunday;
+
+  /// No description provided for @titleOperatorTexiCall.
+  ///
+  /// In es, this message translates to:
+  /// **'Llamar Operador TEXI'**
+  String get titleOperatorTexiCall;
+
+  /// No description provided for @descOperatorTexiCustomerService.
+  ///
+  /// In es, this message translates to:
+  /// **'Atención al cliente'**
+  String get descOperatorTexiCustomerService;
+
+  /// No description provided for @bodyOperatorTexiOrContact.
+  ///
+  /// In es, this message translates to:
+  /// **'O contactar a:'**
+  String get bodyOperatorTexiOrContact;
+
+  /// No description provided for @titleOperatorTexiSupport.
+  ///
+  /// In es, this message translates to:
+  /// **'Soporte técnico'**
+  String get titleOperatorTexiSupport;
+
+  /// No description provided for @descOperatorTexiSupport.
+  ///
+  /// In es, this message translates to:
+  /// **'Problemas con la app'**
+  String get descOperatorTexiSupport;
+
+  /// No description provided for @titleContactsView.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos'**
+  String get titleContactsView;
+
+  /// No description provided for @bodyContactsMyContacts.
+  ///
+  /// In es, this message translates to:
+  /// **'Mis Contactos'**
+  String get bodyContactsMyContacts;
+
+  /// No description provided for @bodyContactsShareApp.
+  ///
+  /// In es, this message translates to:
+  /// **'Compartir Aplicación'**
+  String get bodyContactsShareApp;
+
+  /// No description provided for @btnContactsShare.
+  ///
+  /// In es, this message translates to:
+  /// **'Compartir'**
+  String get btnContactsShare;
+
+  /// No description provided for @bodyContactsInviteHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Invita a tus familiares y amigos a usar nuestra aplicación, para que sus viajes sean más seguros.'**
+  String get bodyContactsInviteHint;
+
+  /// No description provided for @bodyContactsAddNew.
+  ///
+  /// In es, this message translates to:
+  /// **'Agregar Nuevo Contacto'**
+  String get bodyContactsAddNew;
+
+  /// No description provided for @labelContactsUserIdTx.
+  ///
+  /// In es, this message translates to:
+  /// **'IDTX de Usuario'**
+  String get labelContactsUserIdTx;
+
+  /// No description provided for @hintContactsEnterId.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa ID'**
+  String get hintContactsEnterId;
+
+  /// No description provided for @labelContactsName.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre'**
+  String get labelContactsName;
+
+  /// No description provided for @hintContactsEnterName.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa nombre'**
+  String get hintContactsEnterName;
+
+  /// No description provided for @btnContactsSaveContact.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar Contacto'**
+  String get btnContactsSaveContact;
 }
 
 class _AppLocalizationsDelegate

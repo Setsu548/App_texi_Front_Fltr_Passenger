@@ -1,5 +1,6 @@
 import 'package:app_texi_passenger/app/app_bar_logo_home.dart';
 import 'package:app_texi_passenger/app/app_scaffold.dart';
+import 'package:app_texi_passenger/navigation/view/side_menu_view.dart';
 import 'package:app_texi_passenger/travel/view/travel_request_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +23,9 @@ class TravelRequestScreen extends HookWidget {
       child: AppScaffold(
         loadingOverlay: true,
         appBar: AppBarLogoHome(context),
+        endDrawer: Drawer( 
+          child: SideMenuView()
+        ),
         disableBackButton: true, 
         onBackButtonPressed: () async {
           if (!Navigator.of(context).canPop()) {

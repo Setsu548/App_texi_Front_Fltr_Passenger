@@ -22,6 +22,7 @@ const lightColorScheme = ColorScheme(
   outline: Color(0xFF424242), // Bordes grises
   surfaceVariant: Color.fromARGB(255, 231, 122, 5),
   surfaceTint: Color(0xFFFFFFFF), // Texto blanco
+  surfaceDim: Color.fromARGB(255, 21, 146, 9),
 );
 
 class MainTheme {

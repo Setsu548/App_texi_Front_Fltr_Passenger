@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class LinkTextPrimary extends StatelessWidget {
   final String text;
+  final Color? color;
   final VoidCallback onTap;
 
   const LinkTextPrimary(
     this.text, {
+    this.color,
     Key? key,
     required this.onTap,
   }) : super(key: key);
@@ -20,7 +22,7 @@ class LinkTextPrimary extends StatelessWidget {
       child: Text(
         text,
         style: baseStyle?.copyWith(
-          color: lightColorScheme.primary,
+          color: color ?? lightColorScheme.primary,
           decoration: TextDecoration.underline,
         ),
       ),

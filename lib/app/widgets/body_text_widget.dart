@@ -4,10 +4,14 @@ class BodyText extends StatelessWidget {
   final String text;
   final Color? color;
   final TextAlign? textAlign;
+  final int? maxLines;
+  final TextOverflow? overflow;
 
   const BodyText(
     this.text, {
     this.textAlign = TextAlign.start,
+    this.maxLines,         
+    this.overflow,  
     Key? key,
     this.color,
   }) : super(key: key);
@@ -22,6 +26,8 @@ class BodyText extends StatelessWidget {
       ),
       textAlign: textAlign,
       softWrap: true,
+      maxLines: maxLines,       
+      overflow: overflow, 
     );
   }
 }

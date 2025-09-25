@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 class LabeledTextField extends StatelessWidget {
   final String label;
   final String hint;
+  final Color? colorLabel;
+  final Color? focusedBorder;
+  final Color? background;
   final TextInputType keyboardType;
   final String? prefixText; 
 
@@ -12,6 +15,9 @@ class LabeledTextField extends StatelessWidget {
     super.key,
     required this.label,
     required this.hint,
+    this.colorLabel,
+    this.focusedBorder,
+    this.background,
     this.keyboardType = TextInputType.text,
     this.prefixText,
   });
@@ -19,7 +25,7 @@ class LabeledTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 4.0),
+      padding: const EdgeInsets.symmetric(vertical: 6.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +37,7 @@ class LabeledTextField extends StatelessWidget {
                 Text(
                   prefixText!,
                   style: TextStyle(
-                    color: lightColorScheme.onSurface,
+                    color: colorLabel ?? lightColorScheme.onSurface,
                     fontSize: 16,
                   ),
                 ),
@@ -40,14 +46,14 @@ class LabeledTextField extends StatelessWidget {
               Expanded(
                 child: TextField(
                   cursorColor: lightColorScheme.secondaryContainer,
-                  style: TextStyle(color: lightColorScheme.surface),
+                  style: TextStyle(color: colorLabel ?? lightColorScheme.surface),
                   maxLength: 50,
                   keyboardType: keyboardType,
                   decoration: InputDecoration(
                     hintStyle: TextStyle(
                       color: lightColorScheme.secondaryContainer,
                     ),
-                    fillColor: lightColorScheme.surfaceTint,
+                    fillColor: background ?? lightColorScheme.surfaceTint,
                     hintText: hint,
                     counterText: '',
                     disabledBorder: OutlineInputBorder(
@@ -64,7 +70,7 @@ class LabeledTextField extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: lightColorScheme.outline,
+                        color: focusedBorder ?? lightColorScheme.outline,
                       ),
                       borderRadius: const BorderRadius.all(Radius.circular(12)),
                     ),

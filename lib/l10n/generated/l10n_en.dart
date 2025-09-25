@@ -192,4 +192,206 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get linkSkipForNow => 'Skip for now';
+
+  @override
+  String get sideMenuItemProfile => 'Profile';
+
+  @override
+  String get sideMenuItemHistory => 'History';
+
+  @override
+  String get sideMenuItemDestinations => 'Destinations';
+
+  @override
+  String get sideMenuItemOperatorTexi => 'TEXI Operator';
+
+  @override
+  String get sideMenuItemContacts => 'Contacts';
+
+  @override
+  String get sideMenuItemLogout => 'LOG OUT';
+
+  @override
+  String get titleProfileView => 'Passenger profile';
+
+  @override
+  String get bodyProfileViewPersonalInfo => 'Personal information';
+
+  @override
+  String get labelProfileViewName => 'Name';
+
+  @override
+  String get labelProfileViewPhone => 'Phone';
+
+  @override
+  String get linkProfileViewEditInfo => 'Edit information';
+
+  @override
+  String get bodyProfileViewSettings => 'Settings';
+
+  @override
+  String get labelProfileViewLanguage => 'Language';
+
+  @override
+  String get optionProfileViewLanguageSpanish => 'Spanish';
+
+  @override
+  String get labelProfileViewDarkMode => 'Dark mode';
+
+  @override
+  String get labelProfileViewNotifications => 'Notifications';
+
+  @override
+  String get bodyProfileViewPaymentMethods => 'Payment methods';
+
+  @override
+  String get labelProfileViewCash => 'Cash';
+
+  @override
+  String get linkProfileViewAddPaymentMethod => 'Add payment method';
+
+  @override
+  String get btnProfileViewLogout => 'Log out';
+
+  @override
+  String get btnProfileViewBack => 'Back';
+
+  @override
+  String get titleTravelHistoryView => 'Trip history';
+
+  @override
+  String get labelTravelHistorySelectedDate => 'Selected date:';
+
+  @override
+  String get bodyTravelHistoryTripsMade => 'Trips completed';
+
+  @override
+  String get statusTripCompleted => 'Completed';
+
+  @override
+  String get titleSavedDestinationsView => 'Saved Destinations';
+
+  @override
+  String get bodySavedDestinationsFavorites => 'Favorites';
+
+  @override
+  String get linkSavedDestinationsEdit => 'Edit';
+
+  @override
+  String get btnSavedPlaceCardRequestRide => 'Request ride';
+
+  @override
+  String get bodySavedDestinationsRecent => 'Recent';
+
+  @override
+  String get linkSavedDestinationsSeeAll => 'View all';
+
+  @override
+  String get bodySavedDestinationsCreateNew => 'Create new destination';
+
+  @override
+  String get hintSearchPlaceField => 'Search address or place';
+
+  @override
+  String get labelSavedDestinationsSaveAs => 'Save as';
+
+  @override
+  String get optionSavedDestinationsHome => 'Home';
+
+  @override
+  String get optionSavedDestinationsWork => 'Work';
+
+  @override
+  String get optionSavedDestinationsOther => 'Other';
+
+  @override
+  String get btnSavedDestinationsSave => 'Save destination';
+
+  @override
+  String get titleOperatorTexiView => 'TEXI Operator';
+
+  @override
+  String get bodyOperatorTexiSendMessage => 'Send us a message';
+
+  @override
+  String get labelOperatorTexiFullName => 'Full name';
+
+  @override
+  String get hintOperatorTexiFullName => 'Enter your full name';
+
+  @override
+  String get labelOperatorTexiInquiryType => 'Inquiry type';
+
+  @override
+  String get hintOperatorTexiInquiryType => 'General inquiry';
+
+  @override
+  String get labelOperatorTexiMessage => 'Message';
+
+  @override
+  String get hintOperatorTexiMessage => 'Write your message here...';
+
+  @override
+  String get btnOperatorTexiSendMessage => 'Send message';
+
+  @override
+  String get bodyOperatorTexiCallHours => 'Call service hours';
+
+  @override
+  String get labelOperatorTexiMonFri => 'Monday to Friday';
+
+  @override
+  String get labelOperatorTexiSaturday => 'Saturdays';
+
+  @override
+  String get labelOperatorTexiSunday => 'Sundays';
+
+  @override
+  String get titleOperatorTexiCall => 'Call TEXI Operator';
+
+  @override
+  String get descOperatorTexiCustomerService => 'Customer service';
+
+  @override
+  String get bodyOperatorTexiOrContact => 'Or contact:';
+
+  @override
+  String get titleOperatorTexiSupport => 'Technical support';
+
+  @override
+  String get descOperatorTexiSupport => 'App issues';
+
+  @override
+  String get titleContactsView => 'Contacts';
+
+  @override
+  String get bodyContactsMyContacts => 'My contacts';
+
+  @override
+  String get bodyContactsShareApp => 'Share app';
+
+  @override
+  String get btnContactsShare => 'Share';
+
+  @override
+  String get bodyContactsInviteHint =>
+      'Invite your family and friends to use our app so their trips are safer.';
+
+  @override
+  String get bodyContactsAddNew => 'Add new contact';
+
+  @override
+  String get labelContactsUserIdTx => 'User IDTX';
+
+  @override
+  String get hintContactsEnterId => 'Enter ID';
+
+  @override
+  String get labelContactsName => 'Name';
+
+  @override
+  String get hintContactsEnterName => 'Enter name';
+
+  @override
+  String get btnContactsSaveContact => 'Save contact';
 }

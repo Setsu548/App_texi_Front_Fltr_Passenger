@@ -8,6 +8,7 @@ class DoubleIconButton extends StatelessWidget {
   final String title;           
   final String description;    
   final IconData trailingIcon;  
+  final Color? buttonColor;
   final VoidCallback onTap;     
 
   const DoubleIconButton({
@@ -16,6 +17,7 @@ class DoubleIconButton extends StatelessWidget {
     required this.title,
     required this.description,
     required this.trailingIcon,
+    this.buttonColor,
     required this.onTap,
   }) : super(key: key);
 
@@ -30,7 +32,7 @@ class DoubleIconButton extends StatelessWidget {
             RoundedRectangleBorder(
               borderRadius: const BorderRadius.all(Radius.circular(15)),
               side: BorderSide(
-                color: lightColorScheme.primary,
+                color: buttonColor ?? lightColorScheme.primary,
                 width: 2,
               )
             ),
@@ -39,8 +41,8 @@ class DoubleIconButton extends StatelessWidget {
       onPressed: onTap,
       child: Row(
         children: [
-          Icon(leadingIcon, color: lightColorScheme.primary, size: 25),
-          const SizedBox(width: 20),
+          Icon(leadingIcon, color: buttonColor ?? lightColorScheme.primary, size: 25),
+          SizedBox(width: 20),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,8 +54,16 @@ class DoubleIconButton extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 20),
-          Icon(trailingIcon, color: lightColorScheme.primary, size: 25),
+          SizedBox(width: 20),
+          CircleAvatar(
+            backgroundColor: buttonColor ?? lightColorScheme.primary,
+            radius: 22,
+            child: Icon(
+              trailingIcon,
+              color: lightColorScheme.onPrimary,
+              size: 24,
+            ),
+          ),        
         ],
       ),
     );

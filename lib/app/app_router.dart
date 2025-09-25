@@ -1,3 +1,8 @@
+import 'package:app_texi_passenger/navigation/screen/contacts_screen.dart';
+import 'package:app_texi_passenger/navigation/screen/operator_texi_screen.dart';
+import 'package:app_texi_passenger/navigation/screen/profile_screen.dart';
+import 'package:app_texi_passenger/navigation/screen/saved_destinations_screen.dart';
+import 'package:app_texi_passenger/navigation/screen/travel_history_screen.dart';
 import 'package:app_texi_passenger/security/screen/account_verification_screen.dart';
 import 'package:app_texi_passenger/security/screen/profile_data_screen.dart';
 import 'package:app_texi_passenger/travel/screen/destination_selection_screen.dart';
@@ -133,6 +138,56 @@ final GoRouter appRouter = GoRouter(
         return getBuilder(
           state,
           screen: const TravelRatingScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/navigation/profile',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const ProfileScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/navigation/travel_history',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const TravelhistoryScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/navigation/saved_destinations',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const SavedDestinationsScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/navigation/operator_texi',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const OperatorTexiScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/navigation/contacts',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const ContactsScreen(),
         );
       },
     ),
