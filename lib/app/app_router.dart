@@ -5,9 +5,11 @@ import 'package:app_texi_passenger/navigation/screen/saved_destinations_screen.d
 import 'package:app_texi_passenger/navigation/screen/travel_history_screen.dart';
 import 'package:app_texi_passenger/security/screen/account_verification_screen.dart';
 import 'package:app_texi_passenger/security/screen/profile_data_screen.dart';
+import 'package:app_texi_passenger/travel/screen/cancel_trip_screen.dart';
 import 'package:app_texi_passenger/travel/screen/destination_selection_screen.dart';
 import 'package:app_texi_passenger/travel/screen/driver_tracking_screen.dart';
 import 'package:app_texi_passenger/travel/screen/ongoing_trip_screen.dart';
+import 'package:app_texi_passenger/travel/screen/passenger_chat_screen.dart';
 import 'package:app_texi_passenger/travel/screen/travel_rating_screen.dart';
 import 'package:app_texi_passenger/travel/screen/travel_request_screen.dart';
 import 'package:app_texi_passenger/travel/screen/trip_safety_screen.dart';
@@ -138,6 +140,26 @@ final GoRouter appRouter = GoRouter(
         return getBuilder(
           state,
           screen: const TravelRatingScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/travel/cancel_trip',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const CancelTripScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/travel/passenger_chat',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const PassengerChatScreen(),
         );
       },
     ),

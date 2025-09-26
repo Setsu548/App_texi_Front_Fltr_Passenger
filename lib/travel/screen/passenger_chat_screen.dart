@@ -1,12 +1,12 @@
 import 'package:app_texi_passenger/app/app_bar_logo_home.dart';
 import 'package:app_texi_passenger/navigation/view/side_menu_view.dart';
-import 'package:app_texi_passenger/travel/view/destination_selection_view.dart';
+import 'package:app_texi_passenger/travel/view/passenger_chat_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../app/app_scaffold.dart';
 
-class DestinationSelectionScreen extends HookWidget {
-  const DestinationSelectionScreen({super.key});
+class PassengerChatScreen extends HookWidget {
+  const PassengerChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +25,9 @@ class DestinationSelectionScreen extends HookWidget {
       onBackButtonPressed: () async {
         return Future.value(true);
       },
-      body: ListView(
+      body: Padding(
         padding: EdgeInsets.all(10.0),
-        children: [
-          SizedBox(height: 10),
-          DestinationSelectionView()
-        ]
+        child: PassengerChatView()
       ),
     );
   }

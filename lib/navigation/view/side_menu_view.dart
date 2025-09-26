@@ -3,7 +3,6 @@ import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
 import '../../app/widgets/side_menu_item_widget.dart';
 
 class SideMenuView extends HookWidget {

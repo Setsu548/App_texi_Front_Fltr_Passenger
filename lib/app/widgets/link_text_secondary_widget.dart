@@ -21,7 +21,7 @@ class LinkTextSecondary extends StatelessWidget {
         text,
         style: baseStyle?.copyWith(
           color: lightColorScheme.primary,
-          decoration: TextDecoration.underline,
+          decoration: TextDecoration.none,
         ),
       ),
     );

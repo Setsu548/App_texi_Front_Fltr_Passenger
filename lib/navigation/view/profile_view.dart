@@ -1,6 +1,7 @@
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_on_surface_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/languaje_dropdown_pill_widget.dart';
 import 'package:app_texi_passenger/app/widgets/link_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/pill_switch_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_variant_button.dart';
@@ -10,6 +11,7 @@ import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileView extends HookWidget {
   const ProfileView({super.key});
@@ -17,6 +19,12 @@ class ProfileView extends HookWidget {
   @override
   Widget build(BuildContext context) {
 
+    final langs = const [
+      LanguageOption('es', 'Español'),
+      LanguageOption('en', 'English'),
+    ];
+
+    final selectedLang = useState('es');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -74,29 +82,13 @@ class ProfileView extends HookWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BodyText(context.intl.labelProfileViewLanguage),
-                InkWell(
-                  onTap: () {},
-                  overlayColor: MaterialStateProperty.all(Colors.transparent),
-                  splashFactory: NoSplash.splashFactory,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: lightColorScheme.secondaryContainer,
-                      borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: lightColorScheme.onSurface),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        BodyText(context.intl.optionProfileViewLanguageSpanish),
-                        SizedBox(width: 6),
-                        Icon(Icons.arrow_drop_down_rounded,
-                          size: 18, color: lightColorScheme.onSurface
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                LanguageDropdownPill(
+                  options: langs,
+                  value: selectedLang.value,
+                  onChanged: (code) {
+                    selectedLang.value = code;
+                  },
+                )
               ],
             ),
             SizedBox(height: 20),
@@ -161,7 +153,9 @@ class ProfileView extends HookWidget {
           backgroundColor: lightColorScheme.secondary,
           borderColor: lightColorScheme.primary,
           foregroundColor: lightColorScheme.onSurface,
-          onPressed: () {}
+          onPressed: () {
+            context.pop();
+          }
         ),
       ],
     );

@@ -5,9 +5,13 @@ import 'package:app_texi_passenger/app/widgets/primary_variant_button.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/trip_receipt_tile_widget.dart';
 import 'package:app_texi_passenger/l10n/l10n_extension.dart';
+import 'package:app_texi_passenger/navigation/utils/bottom_sheet.dart';
+import 'package:app_texi_passenger/navigation/utils/format_date.dart';
+import 'package:app_texi_passenger/navigation/utils/format_long_date_es.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
 class TravelHistoryView extends HookWidget {
   const TravelHistoryView({super.key});
@@ -46,17 +50,27 @@ class TravelHistoryView extends HookWidget {
       ),
     ];
 
+    final selectedDate = useState<DateTime>(DateTime.now());
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TitleText(context.intl.titleTravelHistoryView),
         SizedBox(height: 20),
         LabelText(context.intl.labelTravelHistorySelectedDate),
-        BodyText('15 de Julio, 2025', color: lightColorScheme.surfaceVariant),
+        BodyText(formatLongDateEs(selectedDate.value), color: lightColorScheme.surfaceVariant),
         SizedBox(height: 10),
         DatePickerField(
-          dateText: '15/07/2025',
-          onTap: () {},
+          dateText: formatDate(selectedDate.value),
+          onTap: () async {
+            final picked = await showBottomSheetDatePicker(
+              context,
+              initialDate: selectedDate.value,
+            );
+            if (picked != null) {
+              selectedDate.value = picked; 
+            }
+          }
         ),
         SizedBox(height: 20),
         Row(
@@ -91,7 +105,9 @@ class TravelHistoryView extends HookWidget {
           backgroundColor: lightColorScheme.secondary,
           borderColor: lightColorScheme.primary,
           foregroundColor: lightColorScheme.onSurface,
-          onPressed: () {}
+          onPressed: () {
+            context.pop();
+          }
         ),
       ],
     );

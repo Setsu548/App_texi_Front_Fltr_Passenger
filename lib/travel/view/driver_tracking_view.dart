@@ -1,9 +1,11 @@
 import 'package:app_texi_passenger/app/app_router.dart';
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/driver_rating_tile_widget.dart';
 import 'package:app_texi_passenger/app/widgets/dual_text_line_widget.dart';
 import 'package:app_texi_passenger/app/widgets/info_tile_flat_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/info_tile_flat_widget.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
+import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/secondary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
 import 'package:app_texi_passenger/l10n/l10n_extension.dart';
@@ -23,7 +25,26 @@ class DriverTrackingView extends HookWidget {
         TitleText(context.intl.titleRealTimeTracking),
         SizedBox(height: 10),
         LabelText(context.intl.labelDriverOnTheWay),
-        SizedBox(height: 30),
+        SizedBox(height: 20),
+        Row(
+          children: [
+            Expanded(
+              child: DriverRatingTile(
+                name: 'Miguel Ángel Rojas',
+                rating: 4.8,
+                avatarImage: NetworkImage(''),
+              ),
+            ),
+            InkWell(
+              splashColor: Colors.transparent,
+              child: Icon(Icons.chat, size: 30, color: lightColorScheme.onSurface),
+              onTap: (){
+                appRouter.push('/travel/passenger_chat');
+              },
+            )
+          ],
+        ),
+        SizedBox(height: 20),
         InfoTileFlat(
           icon: Icons.car_crash_outlined, 
           colorIcon: lightColorScheme.surfaceVariant,
@@ -51,9 +72,19 @@ class DriverTrackingView extends HookWidget {
           description: 'Terminal de Buses, Av. Ayacucho'
         ),
         SizedBox(height: 30),
-        SecondaryButton(text: context.intl.commonCancel, onPressed: (){
-          appRouter.push('/travel/ongoing_trip');
-        })
+        PrimaryButton(
+          text: context.intl.btnNext, 
+          onPressed: (){
+            appRouter.push('/travel/ongoing_trip');
+          }
+        ),
+        SizedBox(height: 20),
+        SecondaryButton(
+          text: context.intl.commonCancel, 
+          onPressed: (){
+          appRouter.push('/travel/cancel_trip');
+          }
+        ),
       ],
     );
   }

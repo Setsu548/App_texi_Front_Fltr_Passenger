@@ -10,6 +10,7 @@ import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
 class ContactsView extends HookWidget {
   const ContactsView({super.key});
@@ -139,7 +140,9 @@ class ContactsView extends HookWidget {
           backgroundColor: lightColorScheme.secondary,
           borderColor: lightColorScheme.primary,
           foregroundColor: lightColorScheme.onSurface,
-          onPressed: () {}
+          onPressed: () {
+            context.pop();
+          }
         ),
       ],
     );

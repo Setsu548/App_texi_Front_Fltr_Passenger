@@ -132,5 +132,18 @@
   "hintContactsEnterId": "Ingresa ID",
   "labelContactsName": "Nombre",
   "hintContactsEnterName": "Ingresa nombre",
-  "btnContactsSaveContact": "Guardar Contacto"
+  "btnContactsSaveContact": "Guardar Contacto",
+
+  "btnNext": "Siguiente",
+  "titleCancelTripView": "Cancelar viaje",
+  "bodyCancelTripReasonIntro": "Indícanos el motivo de tu cancelación",
+  "bodyCancelTripQuestion": "¿Por qué deseas cancelar tu viaje?",
+  "labelCancelTripAddCommentOptional": "Añadir comentario (opcional)",
+  "hintCancelTripAddComment": "Escribe un comentario adicional...",
+  "labelCancelTripReasonVisibleTo": "El motivo seleccionado será visto por el conductor y TEXI",
+  "btnCancelTripConfirm": "Confirmar cancelación",
+  "hintChatInputWriteMessage": "Escribe un mensaje...",
+  "statusPresenceOnline": "En línea",
+  "btnCancel": "Cancelar",
+  "btnSelect": "Select"
 }

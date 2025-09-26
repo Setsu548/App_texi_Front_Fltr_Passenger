@@ -1,5 +1,6 @@
 import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/card_on_surface_widget.dart';
+import 'package:app_texi_passenger/app/widgets/destination_saved_place_widget.dart';
 import 'package:app_texi_passenger/app/widgets/link_text_primary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_variant_button.dart';
@@ -11,6 +12,7 @@ import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
 class SavedDestinationsView extends HookWidget {
   const SavedDestinationsView({super.key});
@@ -39,6 +41,14 @@ class SavedDestinationsView extends HookWidget {
       ),
     ];
 
+    final selectedIndex = useState<int?>(null);
+
+    final places = [
+      'Casa',
+      'Trabajo',
+      'Otro'
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -59,7 +69,7 @@ class SavedDestinationsView extends HookWidget {
             padding: EdgeInsets.symmetric(horizontal: 8),
             children: [
               SizedBox(
-                width: 250,
+                width: 220,
                 child: SavedPlaceCard(
                   title: 'Oficina',
                   address: 'Av. Insurgentes Sur 1602, CDMX',
@@ -143,34 +153,19 @@ class SavedDestinationsView extends HookWidget {
             BodyText(context.intl.labelSavedDestinationsSaveAs), 
             SizedBox(height: 10),
             Row(
-              children: [
-                Expanded(
-                  child: PrimaryVariantButton(
-                    text: context.intl.optionSavedDestinationsHome, 
-                    onPressed: (){},
-                    backgroundColor: lightColorScheme.secondaryContainer,
-                    foregroundColor: lightColorScheme.onSurface,
+              children: List.generate(places.length, (i) {
+                final selected = selectedIndex.value == i;
+                return Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                    child: DestinationSavedPlace(
+                      text: places[i],
+                      isSelected: selected,
+                      onTap: () => selectedIndex.value = i,
+                    ),
                   ),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: PrimaryVariantButton(
-                    text: context.intl.optionSavedDestinationsWork, 
-                    onPressed: (){},
-                    backgroundColor: lightColorScheme.secondaryContainer,
-                    foregroundColor: lightColorScheme.onSurface,
-                  ),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: PrimaryVariantButton(
-                    text: context.intl.optionSavedDestinationsOther, 
-                    onPressed: (){},
-                    backgroundColor: lightColorScheme.secondaryContainer,
-                    foregroundColor: lightColorScheme.onSurface,
-                  ),
-                ),
-              ],
+                );
+              }),
             ),
             SizedBox(height: 10),
             PrimaryButton(
@@ -185,7 +180,9 @@ class SavedDestinationsView extends HookWidget {
           backgroundColor: lightColorScheme.secondary,
           borderColor: lightColorScheme.primary,
           foregroundColor: lightColorScheme.onSurface,
-          onPressed: () {}
+          onPressed: () {
+            context.pop();
+          }
         ),
       ],
     );
