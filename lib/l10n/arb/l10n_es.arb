@@ -145,5 +145,6 @@
   "hintChatInputWriteMessage": "Escribe un mensaje...",
   "statusPresenceOnline": "En línea",
   "btnCancel": "Cancelar",
-  "btnSelect": "Select"
+  "btnSelect": "Select",
+  "labelPinNotValid": "Solo se permiten números"
 }

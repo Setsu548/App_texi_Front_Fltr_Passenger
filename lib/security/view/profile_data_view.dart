@@ -1,15 +1,15 @@
-import 'package:app_texi_passenger/app/app_router.dart';
-import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
-import 'package:app_texi_passenger/app/widgets/card_secondary_widget.dart';
-import 'package:app_texi_passenger/app/widgets/labeled_text_field_widget.dart';
-import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
-import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
-import 'package:app_texi_passenger/l10n/l10n_extension.dart';
-import 'package:app_texi_passenger/theme/main_theme.dart';
-import 'package:flutter/cupertino.dart';
+import '../../app/app_router.dart';
+import '../../app/widgets/body_text_widget.dart';
+import '../../app/widgets/card_secondary_widget.dart';
+import '../../app/widgets/labeled_text_field_widget.dart';
+import '../../app/widgets/primary_button_widget.dart';
+import '../../app/widgets/title_text_widget.dart';
+import '../../l10n/l10n_extension.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import '../../app/widgets/profile_image_picker.dart';
+import '../../theme/main_theme.dart';
 
 class ProfileDataView extends HookWidget {
   const ProfileDataView({super.key});
@@ -37,6 +37,18 @@ class ProfileDataView extends HookWidget {
           ],
         ),
         SizedBox(height: 20),
+        Center(
+          child: ProfileImagePicker(
+            onImageSelected: (file) {
+              if (file != null) {
+                print("Imagen seleccionada: ${file.path}");
+              } else {
+                print("No seleccionó imagen");
+              }
+            },
+          ),
+        ),
+        SizedBox(height: 20),
         PrimaryButton(
           text: context.intl.btnContinue, 
           onPressed: (){
@@ -62,7 +74,8 @@ class ProfileDataView extends HookWidget {
               ),
             ],
           ),
-        )
+        ),
+        SizedBox(height: 20),
       ],
     );
   }

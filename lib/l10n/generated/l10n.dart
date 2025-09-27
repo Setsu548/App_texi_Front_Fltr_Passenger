@@ -931,6 +931,12 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Select'**
   String get btnSelect;
+
+  /// No description provided for @labelPinNotValid.
+  ///
+  /// In es, this message translates to:
+  /// **'Solo se permiten números'**
+  String get labelPinNotValid;
 }
 
 class _AppLocalizationsDelegate

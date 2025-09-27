@@ -432,4 +432,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get btnSelect => 'Select';
+
+  @override
+  String get labelPinNotValid => 'Solo se permiten números';
 }

@@ -1,21 +1,27 @@
-import 'package:app_texi_passenger/app/widgets/body_text_widget.dart';
-import 'package:app_texi_passenger/app/widgets/link_text_primary_widget.dart';
-import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
-import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
-import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
+
 import 'package:app_texi_passenger/l10n/l10n_extension.dart';
-import 'package:app_texi_passenger/theme/main_theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../app/app_router.dart';
+import '../../app/widgets/app_pin.dart';
+import '../../app/widgets/body_text_widget.dart';
+import '../../app/widgets/label_text_widget.dart';
+import '../../app/widgets/link_text_primary_widget.dart';
+import '../../app/widgets/primary_button_widget.dart';
+import '../../app/widgets/title_text_widget.dart';
+import '../../theme/main_theme.dart';
 
 class AccountVerificationView extends HookWidget {
   const AccountVerificationView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final pinController = useTextEditingController();
+    final pinFocusNode = useFocusNode();
+    final pinError = useState(false);
+    final pinErrorLabel = useState('');
+
     return Column(
       children: [
         const SizedBox(height: 40),
@@ -40,6 +46,18 @@ class AccountVerificationView extends HookWidget {
               padding: EdgeInsetsGeometry.symmetric(horizontal: 30),
               child: BodyText(context.intl.bodyEnterVerificationCode, textAlign: TextAlign.center,),
             ),
+            SizedBox(height: 25),
+            AppPin(
+                controller: pinController,
+                focusNode: pinFocusNode,
+                closeKeyboardWhenCompleted: false,
+                error: pinError.value,
+                errorLabel: pinErrorLabel.value,
+                onChange: (value) {
+                },
+                onComplete: (value) {
+                },
+              ),
             SizedBox(height: 25),
             PrimaryButton(text: context.intl.btnVerify, onPressed: () {
               appRouter.push('/security/profile_data');
