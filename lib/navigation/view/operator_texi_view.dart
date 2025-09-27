@@ -88,24 +88,24 @@ class OperatorTexiView extends HookWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                BodyText(context.intl.labelOperatorTexiMonFri),
-                BodyText('8:00 AM - 8:OO PM', color: lightColorScheme.surfaceVariant)
+                Expanded(child: BodyText(context.intl.labelOperatorTexiMonFri)),
+                LabelText('8:00 AM - 8:OO PM', color: lightColorScheme.surfaceVariant)
               ],
             ),
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                BodyText(context.intl.labelOperatorTexiSaturday),
-                BodyText('9:00 AM - 6:OO PM', color: lightColorScheme.surfaceVariant)
+                Expanded(child: BodyText(context.intl.labelOperatorTexiSaturday)),
+                LabelText('9:00 AM - 6:OO PM', color: lightColorScheme.surfaceVariant)
               ],
             ),
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                BodyText(context.intl.labelOperatorTexiSunday),
-                BodyText('10:00 AM - 4:OO PM', color: lightColorScheme.surfaceVariant)
+                Expanded(child: BodyText(context.intl.labelOperatorTexiSunday)),
+                LabelText('10:00 AM - 4:OO PM', color: lightColorScheme.surfaceVariant)
               ],
             ),
             SizedBox(height: 20),
