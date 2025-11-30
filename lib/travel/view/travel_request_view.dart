@@ -10,6 +10,8 @@ import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import 'mini_map_box.dart';
+
 class TravelRequestView extends HookWidget {
   const TravelRequestView({super.key});
 
@@ -35,6 +37,8 @@ class TravelRequestView extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TitleText(context.intl.titleRequestTrip),
+        SizedBox(height: 20),
+        MiniMapBox(),
         SizedBox(height: 30),
         IconTextButton(icon: Icons.send, label: context.intl.labelDestination, onTap: (){
           appRouter.push('/travel/destination_selection');

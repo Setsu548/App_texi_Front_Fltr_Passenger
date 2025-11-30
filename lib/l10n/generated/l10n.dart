@@ -937,6 +937,12 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Solo se permiten números'**
   String get labelPinNotValid;
+
+  /// No description provided for @commonRequiredFieldError.
+  ///
+  /// In es, this message translates to:
+  /// **'Este campo es obligatorio'**
+  String get commonRequiredFieldError;
 }
 
 class _AppLocalizationsDelegate

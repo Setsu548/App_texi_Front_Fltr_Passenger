@@ -1,45 +1,31 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:image_picker/image_picker.dart';
 
-class ProfileImagePicker extends StatefulWidget {
-  final String? initialImage;
-  final Function(File?)? onImageSelected;
+class ProfileImagePicker extends HookWidget {
+  final XFile? initialImage;
+  final ValueChanged<XFile>? onPhotoCaptured; 
 
   const ProfileImagePicker({
     super.key,
     this.initialImage,
-    this.onImageSelected,
+    this.onPhotoCaptured,
   });
 
   @override
-  _ProfileImagePickerState createState() => _ProfileImagePickerState();
-}
-
-class _ProfileImagePickerState extends State<ProfileImagePicker> {
-  File? _imageFile;
-  final ImagePicker _picker = ImagePicker();
-
-  @override
-  void initState() {
-    super.initState();
-    if (widget.initialImage != null) {
-      _imageFile = File(widget.initialImage!);
-    }
-  }
-
-  Future<void> _pickImage() async {
-    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        _imageFile = File(pickedFile.path);
-      });
-      widget.onImageSelected?.call(_imageFile); // notifica al padre
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final image = useState<XFile?>(initialImage);
+    final picker = ImagePicker();
+
+    Future<void> captureImage() async {
+      final pickedFile = await picker.pickImage(source: ImageSource.camera);
+      if (pickedFile != null) {
+        image.value = pickedFile;
+        onPhotoCaptured?.call(pickedFile); // 📤 Notifica al padre
+      }
+    }
+
     return Container(
       width: double.infinity,
       height: 200,
@@ -51,7 +37,7 @@ class _ProfileImagePickerState extends State<ProfileImagePicker> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if (_imageFile == null) ...[
+          if (initialImage == null) ...[
             Icon(Icons.camera_alt, size: 50, color: Colors.black54),
             SizedBox(height: 10),
             Text(
@@ -65,14 +51,14 @@ class _ProfileImagePickerState extends State<ProfileImagePicker> {
                 backgroundColor: Colors.orange[100],
                 foregroundColor: Colors.black,
               ),
-              onPressed: _pickImage,
+              onPressed: captureImage,
               child: Text("Seleccionar imagen"),
             ),
           ] else ...[
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.file(
-                _imageFile!,
+                File(image.value!.path),
                 width: 120,
                 height: 120,
                 fit: BoxFit.cover,
@@ -84,7 +70,7 @@ class _ProfileImagePickerState extends State<ProfileImagePicker> {
                 backgroundColor: Colors.orange[100],
                 foregroundColor: Colors.black,
               ),
-              onPressed: _pickImage,
+              onPressed: captureImage,
               child: Text("Cambiar imagen"),
             ),
           ]

@@ -437,4 +437,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get labelPinNotValid => 'Solo se permiten números';
+
+  @override
+  String get commonRequiredFieldError => 'Este campo es obligatorio';
 }

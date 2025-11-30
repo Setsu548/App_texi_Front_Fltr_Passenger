@@ -10,6 +10,8 @@ class LabeledTextField extends StatelessWidget {
   final Color? background;
   final TextInputType keyboardType;
   final String? prefixText; 
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   const LabeledTextField({
     super.key,
@@ -20,6 +22,8 @@ class LabeledTextField extends StatelessWidget {
     this.background,
     this.keyboardType = TextInputType.text,
     this.prefixText,
+    this.controller,
+    this.validator
   });
 
   @override
@@ -44,7 +48,9 @@ class LabeledTextField extends StatelessWidget {
                 const SizedBox(width: 8), 
               ],
               Expanded(
-                child: TextField(
+                child: TextFormField(
+                  controller: controller,
+                  validator: validator,
                   cursorColor: lightColorScheme.secondaryContainer,
                   style: TextStyle(color: colorLabel ?? lightColorScheme.surface),
                   maxLength: 50,

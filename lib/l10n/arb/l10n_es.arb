@@ -146,5 +146,6 @@
   "statusPresenceOnline": "En línea",
   "btnCancel": "Cancelar",
   "btnSelect": "Select",
-  "labelPinNotValid": "Solo se permiten números"
+  "labelPinNotValid": "Solo se permiten números",
+  "commonRequiredFieldError": "Este campo es obligatorio"
 }

@@ -145,5 +145,6 @@
   "hintChatInputWriteMessage": "Type a message...",
   "statusPresenceOnline": "Online",
   "btnCancel": "Cancel",
-  "btnSelect": "Select"
+  "btnSelect": "Select",
+  "commonRequiredFieldError": "Este campo es obligatorio"
 }
