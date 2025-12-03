@@ -19,7 +19,7 @@ class AuthService {
 
       return ApiResponse<LoginResponse>.fromJson(
         response.data,
-        (data) => LoginResponse.fromJson(data),
+        (data) => LoginResponse.fromMap(data),
       );
     } on DioException catch (e) {
       final data = e.response?.data;
@@ -62,7 +62,7 @@ class AuthService {
 
       return ApiResponse<SendCodeResponse>.fromJson(
         response.data,
-        (data) => SendCodeResponse.fromJson(data),
+        (data) => SendCodeResponse.fromMap(data),
       );
     } on DioException catch (e) {
       final data = e.response?.data;
@@ -84,7 +84,7 @@ class AuthService {
 
       return ApiResponse<UsersResponse>.fromJson(
         response.data,
-        (data) => UsersResponse.fromJson(data),
+        (data) => UsersResponse.fromMap(data),
       );
     } on DioException catch (e) {
       final data = e.response?.data;

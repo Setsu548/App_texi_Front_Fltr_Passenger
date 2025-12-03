@@ -146,5 +146,7 @@
   "statusPresenceOnline": "Online",
   "btnCancel": "Cancel",
   "btnSelect": "Select",
-  "commonRequiredFieldError": "Este campo es obligatorio"
+  "commonRequiredFieldError": "Este campo es obligatorio",
+  "labeledTextFieldEmail": "Email",
+  "labeledTextFieldEmailHint": "ejemplo@correo.com"
 }

@@ -29,6 +29,7 @@ class ProfileDataView extends HookWidget {
     final nameController = useTextEditingController(text: '');
     final phoneNumberController = useTextEditingController(text: '');
     final form = useMemoized(GlobalKey<FormState>.new);
+    final emailController = useTextEditingController(text: '');
     
     return Form(
       key: form,
@@ -45,6 +46,18 @@ class ProfileDataView extends HookWidget {
                 label: context.intl.labelFullNameRequired, 
                 hint: context.intl.hintFullNameExample,
                 controller: nameController,
+                validator: (newValue) {
+                  if (newValue == null || newValue.isEmpty) {
+                    return context.intl.commonRequiredFieldError;
+                  }
+                  return null;
+                },
+              ),
+              LabeledTextField(
+                controller: emailController,
+                label: context.intl.labeledTextFieldEmail,
+                colorLabel: lightColorScheme.surface, 
+                hint: context.intl.labeledTextFieldEmailHint,
                 validator: (newValue) {
                   if (newValue == null || newValue.isEmpty) {
                     return context.intl.commonRequiredFieldError;
@@ -75,7 +88,7 @@ class ProfileDataView extends HookWidget {
               },
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           PrimaryButton(
             text: context.intl.btnContinue, 
             onPressed: () async {
@@ -84,32 +97,33 @@ class ProfileDataView extends HookWidget {
                     final base64ProfileFront = await convertXFileToBase64(profilePhoto.value);
                     final users = Users(
                       brand: '', 
-                      email: '', 
+                      email: emailController.text, 
                       first_name: nameController.text, 
                       ip: '', model: '', 
                       os: '', 
                       profile_picture: base64ProfileFront!, 
                       user_name: phoneNumberController.text);
-                    context.read<LoginBloc>().add(LoginEvent.users(
-                          users: users, 
-                          befor: (res){
-                            showLoadingDialog(context);
-                          },
-                          success: (res){
-                            hideLoadingDialog(context);
-                            appRouter.go('/travel/travel_request');
-                          },
-                          error: (err){
-                            hideLoadingDialog(context);
-                            showErrorDialog(
-                              context,
-                              Icons.error_outline,
-                              err['details'] ?? 'Error desconocido',
-                              title: err['message'] ?? 'Error',
-                            );
-                          }
-                        )
-                      );
+                    appRouter.go('/travel/travel_request');
+                    // context.read<LoginBloc>().add(LoginEvent.users(
+                    //       users: users, 
+                    //       befor: (res){
+                    //         showLoadingDialog(context);
+                    //       },
+                    //       success: (res){
+                    //         hideLoadingDialog(context);
+                    //         appRouter.go('/travel/travel_request');
+                    //       },
+                    //       error: (err){
+                    //         hideLoadingDialog(context);
+                    //         showErrorDialog(
+                    //           context,
+                    //           Icons.error_outline,
+                    //           err['details'] ?? 'Error desconocido',
+                    //           title: err['message'] ?? 'Error',
+                    //         );
+                    //       }
+                    //     )
+                    //   );
                   } else {
                       showErrorDialog(
                         context,

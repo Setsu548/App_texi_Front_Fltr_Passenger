@@ -94,9 +94,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
         if (res.success) {
           print('✅ ${res.message}');
-          print('🔑 Token: ${res.data?.code}');
+          // print('🔑 Token: ${res.data?.code}');
           emit(
             state.copyWith(
+              userName: event.password + event.userName,
               typeUserId: res.data?.type_user_id,
               status: res.data?.status,
               isVerified: res.data?.is_verified,
@@ -112,8 +113,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final res = await authService.login(event.userName,event.password,iosInfo.utsname.machine,iosInfo.model,'iOS ${iosInfo.systemVersion}','');
         if (res.success) {
           print('✅ ${res.message}');
+          emit(
+            state.copyWith(
+              userName: event.password + event.userName,
+              typeUserId: res.data?.type_user_id,
+              status: res.data?.status,
+              isVerified: res.data?.is_verified,
+            ),
+          );
           event.success!(res);
-          print('🔑 Token: ${res.data?.code}');
+          // print('🔑 Token: ${res.data?.code}');
         } else {
           event.error!(res);
           print('⚠️ Error: ${res.message}');
@@ -141,8 +150,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final res = await authService.sendCode(sendCode);
         if (res.success) {
           print('✅ ${res.message}');
-          print('🔑 Token: ${res.data?.code}');
-          SecureTokenStorage.saveToken(res.data!.code);
+
+          // print('🔑 Token: ${res.data?.code}');
+          // SecureTokenStorage.saveToken(res.data!.code);
           event.success!(res);
         } else {
           print('⚠️ Error: ${res.message}');
@@ -160,9 +170,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final res = await authService.sendCode(sendCode);
         if (res.success) {
           print('✅ ${res.message}');
-          SecureTokenStorage.saveToken(res.data!.code);
-          event.success!(res);
-          print('🔑 Token: ${res.data?.code}');
+          // SecureTokenStorage.saveToken(res.data!.code);
+          // event.success!(res);
+          // print('🔑 Token: ${res.data?.code}');
         } else {
           event.error!(res);
           print('⚠️ Error: ${res.message}');
@@ -187,7 +197,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           ip: '', model: event.users.model, 
           os: 'Android ${androidInfo.version.release}', 
           profile_picture: event.users.profile_picture, 
-          user_name: event.users.user_name);
+          user_name: state.userName!);
         final res = await authService.users(users);
         if (res.success) {
           print('✅ ${res.message}');

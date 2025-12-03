@@ -15,8 +15,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../services/address_position_lat_lng.dart';
 
-class DestinationSelectionView extends HookWidget {
-  const DestinationSelectionView({super.key});
+class SelectPickUpView extends HookWidget {
+  const SelectPickUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,12 +63,11 @@ class DestinationSelectionView extends HookWidget {
 
       return null; 
     }, []);
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TitleText(context.intl.titleSelectYourDestination),
-        SizedBox(height: 30),
         SizedBox(height: 30),
         initialPosition.value != null
         ? SizedBox(
@@ -150,15 +149,18 @@ class DestinationSelectionView extends HookWidget {
         //   }),
         // ),
         // SizedBox(height: 20),
-        PrimaryButton(text: context.intl.btnContinue, 
-        onPressed: () async {
+        PrimaryButton(
+          text: context.intl.btnContinue,
+          onPressed: () async {
             if (selectedPosition.value == null){
               final placeName = await getAddressFromLatLng(initialPosition.value!.latitude,initialPosition.value!.longitude);
+
               Navigator.pop(context, {
                 "lat": initialPosition.value!.latitude,
                 "lng": initialPosition.value!.longitude,
                 "name": placeName,
               });
+              
             }else{
               final placeName = await getAddressFromLatLng(selectedPosition.value!.latitude,selectedPosition.value!.longitude);
               Navigator.pop(context, {
@@ -167,7 +169,9 @@ class DestinationSelectionView extends HookWidget {
                 "name": placeName,
               });
             }
-        })
+          }
+        ),
+        SizedBox(height: 30),
       ],
     );
   }

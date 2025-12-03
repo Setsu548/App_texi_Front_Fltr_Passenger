@@ -440,4 +440,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get commonRequiredFieldError => 'Este campo es obligatorio';
+
+  @override
+  String get labeledTextFieldEmail => 'Correo Electrónico';
+
+  @override
+  String get labeledTextFieldEmailHint => 'ejemplo@correo.com';
 }

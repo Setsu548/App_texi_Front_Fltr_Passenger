@@ -17,6 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../security/screen/security_login_screen.dart';
+import '../travel/screen/select_pick_up_screen.dart';
 import 'screen/app_demo_screen.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -100,6 +101,16 @@ final GoRouter appRouter = GoRouter(
         return getBuilder(
           state,
           screen: const DestinationSelectionScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/travel/pick_selection',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return getBuilder(
+          state,
+          screen: const SelectPickUpScreen(),
         );
       },
     ),

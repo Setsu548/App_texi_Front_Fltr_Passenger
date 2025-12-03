@@ -38,7 +38,14 @@ class IconTextButton extends StatelessWidget {
             children: [
               Icon(icon, color: iconColor ?? lightColorScheme.onSurface, ),
               SizedBox(width: 20),
-              BodyText(label, color: lightColorScheme.secondaryContainer)
+              Expanded(   // 👈 NECESARIO PARA TEXTO LARGO EN UN ROW
+                child: BodyText(
+                  label,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  color: lightColorScheme.secondaryContainer,
+                ),
+              ),
             ],
           ),
         ),

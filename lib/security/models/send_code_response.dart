@@ -2,34 +2,46 @@
 import 'dart:convert';
 
 class SendCodeResponse {
-  final String code;
-  final String data;
+  final int type_user_id;
+  final bool is_verified;
+  final String status;
+  final String message;
   SendCodeResponse({
-    required this.code,
-    required this.data,
+    required this.type_user_id,
+    required this.is_verified,
+    required this.status,
+    required this.message,
   });
 
   SendCodeResponse copyWith({
-    String? code,
-    String? data,
+    int? type_user_id,
+    bool? is_verified,
+    String? status,
+    String? message,
   }) {
     return SendCodeResponse(
-      code: code ?? this.code,
-      data: data ?? this.data,
+      type_user_id: type_user_id ?? this.type_user_id,
+      is_verified: is_verified ?? this.is_verified,
+      status: status ?? this.status,
+      message: message ?? this.message,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'code': code,
-      'data': data,
+      'type_user_id': type_user_id,
+      'is_verified': is_verified,
+      'status': status,
+      'message': message,
     };
   }
 
   factory SendCodeResponse.fromMap(Map<String, dynamic> map) {
     return SendCodeResponse(
-      code: map['code'] as String,
-      data: map['data'] as String,
+      type_user_id: map['type_user_id'] as int,
+      is_verified: map['is_verified'] as bool,
+      status: map['status'] as String,
+      message: map['message'] as String,
     );
   }
 
@@ -38,19 +50,28 @@ class SendCodeResponse {
   factory SendCodeResponse.fromJson(String source) => SendCodeResponse.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() => 'SendCodeResponse(code: $code, data: $data)';
+  String toString() {
+    return 'SendCodeResponse(type_user_id: $type_user_id, is_verified: $is_verified, status: $status, message: $message)';
+  }
 
   @override
   bool operator ==(covariant SendCodeResponse other) {
     if (identical(this, other)) return true;
   
     return 
-      other.code == code &&
-      other.data == data;
+      other.type_user_id == type_user_id &&
+      other.is_verified == is_verified &&
+      other.status == status &&
+      other.message == message;
   }
 
   @override
-  int get hashCode => code.hashCode ^ data.hashCode;
+  int get hashCode {
+    return type_user_id.hashCode ^
+      is_verified.hashCode ^
+      status.hashCode ^
+      message.hashCode;
+  }
 }
 
 class SendCode {

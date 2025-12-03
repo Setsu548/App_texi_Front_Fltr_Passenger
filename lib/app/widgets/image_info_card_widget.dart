@@ -55,7 +55,7 @@ class ImageInfoCard extends StatelessWidget {
               const SizedBox(height: 8),
               BodyText(title, color: lightColorScheme.onSurface, textAlign: TextAlign.center,),
               LabelText(description),
-              BodyText('\$${price}', color: lightColorScheme.surfaceVariant),
+              BodyText('\Bs${price}', color: lightColorScheme.surfaceVariant),
             ],
           ),
         ),

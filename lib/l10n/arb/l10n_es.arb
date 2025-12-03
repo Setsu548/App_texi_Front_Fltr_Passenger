@@ -147,5 +147,7 @@
   "btnCancel": "Cancelar",
   "btnSelect": "Select",
   "labelPinNotValid": "Solo se permiten números",
-  "commonRequiredFieldError": "Este campo es obligatorio"
+  "commonRequiredFieldError": "Este campo es obligatorio",
+  "labeledTextFieldEmail": "Correo Electrónico",
+  "labeledTextFieldEmailHint": "ejemplo@correo.com"
 }

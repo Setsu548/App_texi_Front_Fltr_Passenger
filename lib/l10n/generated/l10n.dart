@@ -943,6 +943,18 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Este campo es obligatorio'**
   String get commonRequiredFieldError;
+
+  /// No description provided for @labeledTextFieldEmail.
+  ///
+  /// In es, this message translates to:
+  /// **'Correo Electrónico'**
+  String get labeledTextFieldEmail;
+
+  /// No description provided for @labeledTextFieldEmailHint.
+  ///
+  /// In es, this message translates to:
+  /// **'ejemplo@correo.com'**
+  String get labeledTextFieldEmailHint;
 }
 
 class _AppLocalizationsDelegate
