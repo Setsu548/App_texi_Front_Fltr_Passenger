@@ -8,6 +8,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:822401031550:android:8d9d6a7d089cfe8ac8e72f",
+        "android_client_info": {
+          "package_name": "com.example.app_texi_fltr_driver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIapegN1VICvHyY0YEZIPIXLdUcfJfj0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:822401031550:android:e416c88f74b3b5fbc8e72f",
         "android_client_info": {
           "package_name": "com.example.app_texi_passenger"

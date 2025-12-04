@@ -1,9 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class Users {
   final String brand;
   final String email;
-  final String first_name;
+  final String full_name;
   final String ip;
   final String model;
   final String os;
@@ -12,7 +13,7 @@ class Users {
   Users({
     required this.brand,
     required this.email,
-    required this.first_name,
+    required this.full_name,
     required this.ip,
     required this.model,
     required this.os,
@@ -34,7 +35,7 @@ class Users {
     return Users(
       brand: brand ?? this.brand,
       email: email ?? this.email,
-      first_name: first_name ?? this.first_name,
+      full_name: first_name ?? this.full_name,
       ip: ip ?? this.ip,
       model: model ?? this.model,
       os: os ?? this.os,
@@ -47,7 +48,7 @@ class Users {
     return <String, dynamic>{
       'brand': brand,
       'email': email,
-      'first_name': first_name,
+      'first_name': full_name,
       'ip': ip,
       'model': model,
       'os': os,
@@ -60,7 +61,7 @@ class Users {
     return Users(
       brand: map['brand'] as String,
       email: map['email'] as String,
-      first_name: map['first_name'] as String,
+      full_name: map['full_name'] as String,
       ip: map['ip'] as String,
       model: map['model'] as String,
       os: map['os'] as String,
@@ -75,7 +76,7 @@ class Users {
 
   @override
   String toString() {
-    return 'Users(brand: $brand, email: $email, first_name: $first_name, ip: $ip, model: $model, os: $os, profile_picture: $profile_picture, user_name: $user_name)';
+    return 'Users(brand: $brand, email: $email, full_name: $full_name, ip: $ip, model: $model, os: $os, profile_picture: $profile_picture, user_name: $user_name)';
   }
 
   @override
@@ -85,7 +86,7 @@ class Users {
     return 
       other.brand == brand &&
       other.email == email &&
-      other.first_name == first_name &&
+      other.full_name == full_name &&
       other.ip == ip &&
       other.model == model &&
       other.os == os &&
@@ -97,7 +98,7 @@ class Users {
   int get hashCode {
     return brand.hashCode ^
       email.hashCode ^
-      first_name.hashCode ^
+      full_name.hashCode ^
       ip.hashCode ^
       model.hashCode ^
       os.hashCode ^
@@ -107,34 +108,34 @@ class Users {
 }
 
 class UsersResponse {
-  final String code;
-  final String data;
+  final String token;
+  final String status;
   UsersResponse({
-    required this.code,
-    required this.data,
+    required this.token,
+    required this.status,
   });
 
   UsersResponse copyWith({
-    String? code,
-    String? data,
+    String? token,
+    String? status,
   }) {
     return UsersResponse(
-      code: code ?? this.code,
-      data: data ?? this.data,
+      token: token ?? this.token,
+      status: status ?? this.status,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'code': code,
-      'data': data,
+      'token': token,
+      'status': status,
     };
   }
 
   factory UsersResponse.fromMap(Map<String, dynamic> map) {
     return UsersResponse(
-      code: map['code'] as String,
-      data: map['data'] as String,
+      token: map['token'] as String,
+      status: map['status'] as String,
     );
   }
 
@@ -143,17 +144,17 @@ class UsersResponse {
   factory UsersResponse.fromJson(String source) => UsersResponse.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() => 'UsersResponse(code: $code, data: $data)';
+  String toString() => 'UsersResponse(token: $token, status: $status)';
 
   @override
   bool operator ==(covariant UsersResponse other) {
     if (identical(this, other)) return true;
   
     return 
-      other.code == code &&
-      other.data == data;
+      other.token == token &&
+      other.status == status;
   }
 
   @override
-  int get hashCode => code.hashCode ^ data.hashCode;
+  int get hashCode => token.hashCode ^ status.hashCode;
 }

@@ -7,10 +7,13 @@ import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
 import 'package:app_texi_passenger/l10n/l10n_extension.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+import '../../app/widgets/loading_dialog.dart';
 
 class TravelRequestView extends HookWidget {
   const TravelRequestView({super.key});
@@ -39,24 +42,25 @@ class TravelRequestView extends HookWidget {
     final nameDestinationSelection = useState<String>('');
     final latFin = useState<double?>(null);
     final lngFin = useState<double?>(null);
-    final amountController = useTextEditingController();
-    double baseFare = 5;     // tarifa base
+    final amountController = useTextEditingController(text: '');    // tarifa base
     double perKmFare = 3.2;
+    double distance=0.0;
 
     double calculateDistance(double lat1, double lng1, double lat2, double lng2) {
       return Geolocator.distanceBetween(lat1, lng1, lat2, lng2) / 1000; // km
     }
 
-    void calculateFare() {
+    void calculateFare(double? baseFare) {
+      
       if (latInit.value != null && lngInit.value != null &&
           latFin.value != null && lngFin.value != null) {
 
-        double distance = calculateDistance(
+        distance = calculateDistance(
           latInit.value!, lngInit.value!,
           latFin.value!, lngFin.value!,
         );
 
-        double total = baseFare + (distance * perKmFare);
+        double total = (baseFare ?? 5.50)  + (distance * perKmFare);
 
         amountController.text = total.toStringAsFixed(2);
       }
@@ -109,12 +113,15 @@ class TravelRequestView extends HookWidget {
               latFin.value = data['lat'];
               lngFin.value = data['lng'];
               nameDestinationSelection.value = name; 
+              calculateFare(null);
+              selectedIndex.value = 0;
             }
           }
         },),
         SizedBox(height: 10),
         LabelText(context.intl.labelSavedDestinations),
         SizedBox(height: 10),
+
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -132,43 +139,59 @@ class TravelRequestView extends HookWidget {
             ],
           ),
         ),
-        SizedBox(height: 30),
-        TitleText(context.intl.titleSelectYourVehicle),
-        SizedBox(height: 10),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Wrap(
-            spacing: 10,
-            children: List.generate(cards.length, (index) {
-              final card = cards[index];
-              final isSelected = selectedIndex.value == index;
-
-              return ImageInfoCard(
-                imageUrl: 'assets/images/texi.png',
-                title: card['title']!,
-                description: card['description']!,
-                price: card['price']!,
-                isSelected: isSelected, 
-                onTap: () {
-                  selectedIndex.value = index;
-                  calculateFare();
-                },
-              );
-            })  ,
+        amountController.text != ''
+        ? SizedBox(height: 30)
+        : Container(),
+        amountController.text != ''
+        ? TitleText(context.intl.titleSelectYourVehicle)
+        : Container(),
+        amountController.text != ''
+        ? SizedBox(height: 10)
+        : Container(),
+        amountController.text != ''
+        ? SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Wrap(
+              spacing: 10,
+              children: List.generate(cards.length, (index) {
+                final card = cards[index];
+                final isSelected = selectedIndex.value == index;
+                return ImageInfoCard(
+                  imageUrl: 'assets/images/texi.png',
+                  title: card['title']!,
+                  description: card['description']!,
+                  price: card['price']!,
+                  isSelected: isSelected, 
+                  onTap: () {
+                    selectedIndex.value = index;
+                    calculateFare(double.parse(card['price']!));
+                  },
+                );
+              })  ,
+            )
+          ): Container(),
+        amountController.text != ''
+        ? SizedBox(height: 20)
+        : Container(),
+        amountController.text != ''
+        ? TextField(
+            controller: amountController,
+            keyboardType: TextInputType.number,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w500,
+            ),
+            decoration: InputDecoration(
+              floatingLabelAlignment: FloatingLabelAlignment.center,
+              border: OutlineInputBorder(),
+              contentPadding: EdgeInsets.symmetric(
+                vertical: 22,
+                horizontal: 16,
+              ),
+            ),
           )
-        ),
-        SizedBox(height: 20),
-        TextField(
-          controller: amountController,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            labelText: "Monto (Bs)",
-            border: OutlineInputBorder(),
-          ),
-          onChanged: (_) {
-            // fuerza rebuild para validar el botón
-          },
-        ),
+        : Container(),
         SizedBox(height: 20),
         PrimaryButton(
         text: context.intl.btnRequestTaxiNow,
@@ -176,8 +199,43 @@ class TravelRequestView extends HookWidget {
                 selectedIndex.value != null &&
                 latInit.value != null &&
                 latFin.value != null)
-            ? () {
-                appRouter.push('/travel/driver_tracking');
+            ? () async {
+                final ref = await createIssue(
+                  namePickSelection.value,
+                  latFin.value!,
+                  lngFin.value!,
+                  nameDestinationSelection.value,
+                  latInit.value!,
+                  lngInit.value!,
+                  'pending',
+                  'Juan Perez',
+                  distance,
+                  5.0,
+                  double.parse(amountController.text),
+                );
+
+                final issueId = ref.id;
+                showLoadingDialog(context,message: 'Buscando taxi');
+                // showDialog(
+                //   context: context,
+                //   barrierDismissible: false,
+                //   builder: (_) => const Center(child: CircularProgressIndicator()),
+                // );
+                FirebaseFirestore.instance
+                    .collection('drive')
+                    .doc(issueId)
+                    .snapshots()
+                    .listen((snapshot) {
+                  if (!snapshot.exists) return;
+
+                  final status = snapshot.data()?['status'];
+
+                  if (status == 'in_comming') {
+                    Navigator.of(context).pop(); // Quitar loading
+                    appRouter.push('/travel/driver_tracking');
+                  }
+                });
+                // appRouter.push('/travel/driver_tracking');
               }
             : null,
       ),
@@ -197,5 +255,27 @@ class TravelRequestView extends HookWidget {
     );
   }
 
+  Future<DocumentReference> createIssue(String pasangerEnd,double pasangerEndLat,double pasangerEndLng,
+    String pasangerStart,double pasangerStartLat,double pasangerStartLng,String status,String fullName,double distanceKm,
+    double timeMin,double amount) async {
+        final ref = await FirebaseFirestore.instance.collection('drive').add({
+      'pasanger_end': pasangerEnd,
+      'pasanger_end_lat': pasangerEndLat,
+      'pasanger_end_lng': pasangerEndLng,
+      'pasanger_start': pasangerStart,
+      'pasanger_start_lat': pasangerStartLat,
+      'pasanger_start_lng': pasangerStartLng,
+      'status': status,
+      'amount': amount,
+      'distance_km': distanceKm,
+      'time_min': timeMin,
+      'full_name': fullName,
+    });
+
+    // Guardar el ID dentro del documento
+    await ref.update({'id': ref.id});
+
+    return ref; // ⭐ AGREGADO
+  }
   
 }

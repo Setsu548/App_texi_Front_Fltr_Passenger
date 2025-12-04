@@ -27,7 +27,7 @@ class ProfileDataView extends HookWidget {
   Widget build(BuildContext context) {
     final profilePhoto = useState<XFile?>(null);
     final nameController = useTextEditingController(text: '');
-    final phoneNumberController = useTextEditingController(text: '');
+    final phoneNumberController = useTextEditingController(text: context.read<LoginBloc>().state.userName);
     final form = useMemoized(GlobalKey<FormState>.new);
     final emailController = useTextEditingController(text: '');
     
@@ -98,32 +98,32 @@ class ProfileDataView extends HookWidget {
                     final users = Users(
                       brand: '', 
                       email: emailController.text, 
-                      first_name: nameController.text, 
+                      full_name: nameController.text, 
                       ip: '', model: '', 
                       os: '', 
                       profile_picture: base64ProfileFront!, 
                       user_name: phoneNumberController.text);
-                    appRouter.go('/travel/travel_request');
-                    // context.read<LoginBloc>().add(LoginEvent.users(
-                    //       users: users, 
-                    //       befor: (res){
-                    //         showLoadingDialog(context);
-                    //       },
-                    //       success: (res){
-                    //         hideLoadingDialog(context);
-                    //         appRouter.go('/travel/travel_request');
-                    //       },
-                    //       error: (err){
-                    //         hideLoadingDialog(context);
-                    //         showErrorDialog(
-                    //           context,
-                    //           Icons.error_outline,
-                    //           err['details'] ?? 'Error desconocido',
-                    //           title: err['message'] ?? 'Error',
-                    //         );
-                    //       }
-                    //     )
-                    //   );
+                    // appRouter.go('/travel/travel_request');
+                    context.read<LoginBloc>().add(LoginEvent.users(
+                        users: users, 
+                        befor: (res){
+                          showLoadingDialog(context);
+                        },
+                        success: (res){
+                          hideLoadingDialog(context);
+                          appRouter.go('/travel/travel_request');
+                        },
+                        error: (err){
+                          hideLoadingDialog(context);
+                          showErrorDialog(
+                            context,
+                            Icons.error_outline,
+                            err['details'] ?? 'Error desconocido',
+                            title: err['message'] ?? 'Error',
+                          );
+                        }
+                      )
+                    );
                   } else {
                       showErrorDialog(
                         context,

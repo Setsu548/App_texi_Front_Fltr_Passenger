@@ -193,7 +193,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final users = Users(
           brand: androidInfo.brand, 
           email: event.users.email, 
-          first_name: event.users.first_name, 
+          full_name: event.users.full_name, 
           ip: '', model: event.users.model, 
           os: 'Android ${androidInfo.version.release}', 
           profile_picture: event.users.profile_picture, 
@@ -201,8 +201,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final res = await authService.users(users);
         if (res.success) {
           print('✅ ${res.message}');
-          print('🔑 Token: ${res.data?.code}');
-          SecureTokenStorage.saveToken(res.data!.code);
+          print('🔑 Token: ${res.data?.token}');
+          SecureTokenStorage.saveToken(res.data!.token);
+          emit(
+            state.copyWith(
+              status: res.data?.status,
+            ),
+          );
           event.success!(res);
         } else {
           print('⚠️ Error: ${res.message}');
@@ -213,7 +218,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final users = Users(
           brand: iosInfo.utsname.machine, 
           email: event.users.email, 
-          first_name: event.users.first_name, 
+          full_name: event.users.full_name, 
           ip: '', model: event.users.model, 
           os: 'iOS ${iosInfo.systemVersion}', 
           profile_picture: event.users.profile_picture, 
@@ -222,9 +227,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final res = await authService.users(users);
         if (res.success) {
           print('✅ ${res.message}');
-          SecureTokenStorage.saveToken(res.data!.code);
+          SecureTokenStorage.saveToken(res.data!.token);
+          emit(
+            state.copyWith(
+              status: res.data?.status,
+            ),
+          );
           event.success!(res);
-          print('🔑 Token: ${res.data?.code}');
+          print('🔑 Token: ${res.data?.token}');
         } else {
           event.error!(res);
           print('⚠️ Error: ${res.message}');

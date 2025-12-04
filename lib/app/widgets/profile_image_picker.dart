@@ -48,14 +48,14 @@ class ProfileImagePicker extends HookWidget {
                   style: TextStyle(color: Colors.black87),
                 ),
                 SizedBox(height: 15),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange[100],
-                    foregroundColor: Colors.black,
-                  ),
-                  onPressed: captureImage,
-                  child: Text("Seleccionar imagen"),
-                ),
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.orange[100],
+                //     foregroundColor: Colors.black,
+                //   ),
+                //   onPressed: captureImage,
+                //   child: Text("Seleccionar imagen"),
+                // ),
               ],
             )
           else
@@ -75,7 +75,7 @@ class ProfileImagePicker extends HookWidget {
               foregroundColor: Colors.black,
             ),
             onPressed: captureImage,
-            child: Text("Cambiar imagen"),
+            child: Text("Capturar imagen"),
           ),
         ],
       ),
