@@ -118,9 +118,10 @@ final GoRouter appRouter = GoRouter(
       path: '/travel/driver_tracking',
       parentNavigatorKey: _rootNavigatorKey,
       pageBuilder: (BuildContext context, GoRouterState state) {
+        final issueId = state.extra as String;
         return getBuilder(
           state,
-          screen: const DriverTrackingScreen(),
+          screen: DriverTrackingScreen(issueId: issueId),
         );
       },
     ),
@@ -128,9 +129,10 @@ final GoRouter appRouter = GoRouter(
       path: '/travel/ongoing_trip',
       parentNavigatorKey: _rootNavigatorKey,
       pageBuilder: (BuildContext context, GoRouterState state) {
+        final issueId = state.extra as String;
         return getBuilder(
           state,
-          screen: const OngoingTripScreen(),
+          screen: OngoingTripScreen(issueId: issueId),
         );
       },
     ),

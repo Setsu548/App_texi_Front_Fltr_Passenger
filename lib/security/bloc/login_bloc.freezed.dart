@@ -30,6 +30,17 @@ mixin _$LoginState {
   String? get status => throw _privateConstructorUsedError;
   String? get userName => throw _privateConstructorUsedError;
   bool? get isVerified => throw _privateConstructorUsedError;
+  double? get latInit => throw _privateConstructorUsedError;
+  double? get lngInit => throw _privateConstructorUsedError;
+  double? get latFin => throw _privateConstructorUsedError;
+  double? get lngFin => throw _privateConstructorUsedError;
+  double? get currentlat => throw _privateConstructorUsedError;
+  double? get currentFin => throw _privateConstructorUsedError;
+  String? get originTime => throw _privateConstructorUsedError;
+  String? get originDescription => throw _privateConstructorUsedError;
+  String? get destinationDescription => throw _privateConstructorUsedError;
+  double? get distance => throw _privateConstructorUsedError;
+  double? get earnings => throw _privateConstructorUsedError;
 
   /// Create a copy of LoginState
   /// with the given fields replaced by the non-null parameter values.
@@ -59,6 +70,17 @@ abstract class $LoginStateCopyWith<$Res> {
     String? status,
     String? userName,
     bool? isVerified,
+    double? latInit,
+    double? lngInit,
+    double? latFin,
+    double? lngFin,
+    double? currentlat,
+    double? currentFin,
+    String? originTime,
+    String? originDescription,
+    String? destinationDescription,
+    double? distance,
+    double? earnings,
   });
 }
 
@@ -90,6 +112,17 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
     Object? status = freezed,
     Object? userName = freezed,
     Object? isVerified = freezed,
+    Object? latInit = freezed,
+    Object? lngInit = freezed,
+    Object? latFin = freezed,
+    Object? lngFin = freezed,
+    Object? currentlat = freezed,
+    Object? currentFin = freezed,
+    Object? originTime = freezed,
+    Object? originDescription = freezed,
+    Object? destinationDescription = freezed,
+    Object? distance = freezed,
+    Object? earnings = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -145,6 +178,50 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
                 ? _value.isVerified
                 : isVerified // ignore: cast_nullable_to_non_nullable
                       as bool?,
+            latInit: freezed == latInit
+                ? _value.latInit
+                : latInit // ignore: cast_nullable_to_non_nullable
+                      as double?,
+            lngInit: freezed == lngInit
+                ? _value.lngInit
+                : lngInit // ignore: cast_nullable_to_non_nullable
+                      as double?,
+            latFin: freezed == latFin
+                ? _value.latFin
+                : latFin // ignore: cast_nullable_to_non_nullable
+                      as double?,
+            lngFin: freezed == lngFin
+                ? _value.lngFin
+                : lngFin // ignore: cast_nullable_to_non_nullable
+                      as double?,
+            currentlat: freezed == currentlat
+                ? _value.currentlat
+                : currentlat // ignore: cast_nullable_to_non_nullable
+                      as double?,
+            currentFin: freezed == currentFin
+                ? _value.currentFin
+                : currentFin // ignore: cast_nullable_to_non_nullable
+                      as double?,
+            originTime: freezed == originTime
+                ? _value.originTime
+                : originTime // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            originDescription: freezed == originDescription
+                ? _value.originDescription
+                : originDescription // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            destinationDescription: freezed == destinationDescription
+                ? _value.destinationDescription
+                : destinationDescription // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            distance: freezed == distance
+                ? _value.distance
+                : distance // ignore: cast_nullable_to_non_nullable
+                      as double?,
+            earnings: freezed == earnings
+                ? _value.earnings
+                : earnings // ignore: cast_nullable_to_non_nullable
+                      as double?,
           )
           as $Val,
     );
@@ -174,6 +251,17 @@ abstract class _$$LoginStateImplCopyWith<$Res>
     String? status,
     String? userName,
     bool? isVerified,
+    double? latInit,
+    double? lngInit,
+    double? latFin,
+    double? lngFin,
+    double? currentlat,
+    double? currentFin,
+    String? originTime,
+    String? originDescription,
+    String? destinationDescription,
+    double? distance,
+    double? earnings,
   });
 }
 
@@ -204,6 +292,17 @@ class __$$LoginStateImplCopyWithImpl<$Res>
     Object? status = freezed,
     Object? userName = freezed,
     Object? isVerified = freezed,
+    Object? latInit = freezed,
+    Object? lngInit = freezed,
+    Object? latFin = freezed,
+    Object? lngFin = freezed,
+    Object? currentlat = freezed,
+    Object? currentFin = freezed,
+    Object? originTime = freezed,
+    Object? originDescription = freezed,
+    Object? destinationDescription = freezed,
+    Object? distance = freezed,
+    Object? earnings = freezed,
   }) {
     return _then(
       _$LoginStateImpl(
@@ -259,6 +358,50 @@ class __$$LoginStateImplCopyWithImpl<$Res>
             ? _value.isVerified
             : isVerified // ignore: cast_nullable_to_non_nullable
                   as bool?,
+        latInit: freezed == latInit
+            ? _value.latInit
+            : latInit // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        lngInit: freezed == lngInit
+            ? _value.lngInit
+            : lngInit // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        latFin: freezed == latFin
+            ? _value.latFin
+            : latFin // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        lngFin: freezed == lngFin
+            ? _value.lngFin
+            : lngFin // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        currentlat: freezed == currentlat
+            ? _value.currentlat
+            : currentlat // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        currentFin: freezed == currentFin
+            ? _value.currentFin
+            : currentFin // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        originTime: freezed == originTime
+            ? _value.originTime
+            : originTime // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        originDescription: freezed == originDescription
+            ? _value.originDescription
+            : originDescription // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        destinationDescription: freezed == destinationDescription
+            ? _value.destinationDescription
+            : destinationDescription // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        distance: freezed == distance
+            ? _value.distance
+            : distance // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        earnings: freezed == earnings
+            ? _value.earnings
+            : earnings // ignore: cast_nullable_to_non_nullable
+                  as double?,
       ),
     );
   }
@@ -281,6 +424,17 @@ class _$LoginStateImpl implements _LoginState {
     this.status = null,
     this.userName = null,
     this.isVerified = null,
+    this.latInit = null,
+    this.lngInit = null,
+    this.latFin = null,
+    this.lngFin = null,
+    this.currentlat = null,
+    this.currentFin = null,
+    this.originTime = null,
+    this.originDescription = null,
+    this.destinationDescription = null,
+    this.distance = null,
+    this.earnings = null,
   });
 
   @override
@@ -321,10 +475,43 @@ class _$LoginStateImpl implements _LoginState {
   @override
   @JsonKey()
   final bool? isVerified;
+  @override
+  @JsonKey()
+  final double? latInit;
+  @override
+  @JsonKey()
+  final double? lngInit;
+  @override
+  @JsonKey()
+  final double? latFin;
+  @override
+  @JsonKey()
+  final double? lngFin;
+  @override
+  @JsonKey()
+  final double? currentlat;
+  @override
+  @JsonKey()
+  final double? currentFin;
+  @override
+  @JsonKey()
+  final String? originTime;
+  @override
+  @JsonKey()
+  final String? originDescription;
+  @override
+  @JsonKey()
+  final String? destinationDescription;
+  @override
+  @JsonKey()
+  final double? distance;
+  @override
+  @JsonKey()
+  final double? earnings;
 
   @override
   String toString() {
-    return 'LoginState(token: $token, nombre: $nombre, ci: $ci, telefono: $telefono, email: $email, categoria: $categoria, uuid: $uuid, cartId: $cartId, loadingListVehicle: $loadingListVehicle, typeUserId: $typeUserId, status: $status, userName: $userName, isVerified: $isVerified)';
+    return 'LoginState(token: $token, nombre: $nombre, ci: $ci, telefono: $telefono, email: $email, categoria: $categoria, uuid: $uuid, cartId: $cartId, loadingListVehicle: $loadingListVehicle, typeUserId: $typeUserId, status: $status, userName: $userName, isVerified: $isVerified, latInit: $latInit, lngInit: $lngInit, latFin: $latFin, lngFin: $lngFin, currentlat: $currentlat, currentFin: $currentFin, originTime: $originTime, originDescription: $originDescription, destinationDescription: $destinationDescription, distance: $distance, earnings: $earnings)';
   }
 
   @override
@@ -350,11 +537,29 @@ class _$LoginStateImpl implements _LoginState {
             (identical(other.userName, userName) ||
                 other.userName == userName) &&
             (identical(other.isVerified, isVerified) ||
-                other.isVerified == isVerified));
+                other.isVerified == isVerified) &&
+            (identical(other.latInit, latInit) || other.latInit == latInit) &&
+            (identical(other.lngInit, lngInit) || other.lngInit == lngInit) &&
+            (identical(other.latFin, latFin) || other.latFin == latFin) &&
+            (identical(other.lngFin, lngFin) || other.lngFin == lngFin) &&
+            (identical(other.currentlat, currentlat) ||
+                other.currentlat == currentlat) &&
+            (identical(other.currentFin, currentFin) ||
+                other.currentFin == currentFin) &&
+            (identical(other.originTime, originTime) ||
+                other.originTime == originTime) &&
+            (identical(other.originDescription, originDescription) ||
+                other.originDescription == originDescription) &&
+            (identical(other.destinationDescription, destinationDescription) ||
+                other.destinationDescription == destinationDescription) &&
+            (identical(other.distance, distance) ||
+                other.distance == distance) &&
+            (identical(other.earnings, earnings) ||
+                other.earnings == earnings));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     runtimeType,
     token,
     nombre,
@@ -369,7 +574,18 @@ class _$LoginStateImpl implements _LoginState {
     status,
     userName,
     isVerified,
-  );
+    latInit,
+    lngInit,
+    latFin,
+    lngFin,
+    currentlat,
+    currentFin,
+    originTime,
+    originDescription,
+    destinationDescription,
+    distance,
+    earnings,
+  ]);
 
   /// Create a copy of LoginState
   /// with the given fields replaced by the non-null parameter values.
@@ -395,6 +611,17 @@ abstract class _LoginState implements LoginState {
     final String? status,
     final String? userName,
     final bool? isVerified,
+    final double? latInit,
+    final double? lngInit,
+    final double? latFin,
+    final double? lngFin,
+    final double? currentlat,
+    final double? currentFin,
+    final String? originTime,
+    final String? originDescription,
+    final String? destinationDescription,
+    final double? distance,
+    final double? earnings,
   }) = _$LoginStateImpl;
 
   @override
@@ -423,6 +650,28 @@ abstract class _LoginState implements LoginState {
   String? get userName;
   @override
   bool? get isVerified;
+  @override
+  double? get latInit;
+  @override
+  double? get lngInit;
+  @override
+  double? get latFin;
+  @override
+  double? get lngFin;
+  @override
+  double? get currentlat;
+  @override
+  double? get currentFin;
+  @override
+  String? get originTime;
+  @override
+  String? get originDescription;
+  @override
+  String? get destinationDescription;
+  @override
+  double? get distance;
+  @override
+  double? get earnings;
 
   /// Create a copy of LoginState
   /// with the given fields replaced by the non-null parameter values.
@@ -465,6 +714,20 @@ mixin _$LoginEvent {
       Users users,
     )
     users,
+    required TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )
+    saveRoutes,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
@@ -497,6 +760,20 @@ mixin _$LoginEvent {
       Users users,
     )?
     users,
+    TResult? Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
@@ -529,6 +806,20 @@ mixin _$LoginEvent {
       Users users,
     )?
     users,
+    TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -538,6 +829,7 @@ mixin _$LoginEvent {
     required TResult Function(_LogoutEvent value) logout,
     required TResult Function(_SendCodeEvent value) sendCode,
     required TResult Function(_UsersEvent value) users,
+    required TResult Function(_SaveRoutesEvent value) saveRoutes,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
@@ -546,6 +838,7 @@ mixin _$LoginEvent {
     TResult? Function(_LogoutEvent value)? logout,
     TResult? Function(_SendCodeEvent value)? sendCode,
     TResult? Function(_UsersEvent value)? users,
+    TResult? Function(_SaveRoutesEvent value)? saveRoutes,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
@@ -554,6 +847,7 @@ mixin _$LoginEvent {
     TResult Function(_LogoutEvent value)? logout,
     TResult Function(_SendCodeEvent value)? sendCode,
     TResult Function(_UsersEvent value)? users,
+    TResult Function(_SaveRoutesEvent value)? saveRoutes,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -652,6 +946,20 @@ class _$InitialEventImpl implements _InitialEvent {
       Users users,
     )
     users,
+    required TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )
+    saveRoutes,
   }) {
     return initial();
   }
@@ -688,6 +996,20 @@ class _$InitialEventImpl implements _InitialEvent {
       Users users,
     )?
     users,
+    TResult? Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
   }) {
     return initial?.call();
   }
@@ -724,6 +1046,20 @@ class _$InitialEventImpl implements _InitialEvent {
       Users users,
     )?
     users,
+    TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -740,6 +1076,7 @@ class _$InitialEventImpl implements _InitialEvent {
     required TResult Function(_LogoutEvent value) logout,
     required TResult Function(_SendCodeEvent value) sendCode,
     required TResult Function(_UsersEvent value) users,
+    required TResult Function(_SaveRoutesEvent value) saveRoutes,
   }) {
     return initial(this);
   }
@@ -752,6 +1089,7 @@ class _$InitialEventImpl implements _InitialEvent {
     TResult? Function(_LogoutEvent value)? logout,
     TResult? Function(_SendCodeEvent value)? sendCode,
     TResult? Function(_UsersEvent value)? users,
+    TResult? Function(_SaveRoutesEvent value)? saveRoutes,
   }) {
     return initial?.call(this);
   }
@@ -764,6 +1102,7 @@ class _$InitialEventImpl implements _InitialEvent {
     TResult Function(_LogoutEvent value)? logout,
     TResult Function(_SendCodeEvent value)? sendCode,
     TResult Function(_UsersEvent value)? users,
+    TResult Function(_SaveRoutesEvent value)? saveRoutes,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -928,6 +1267,20 @@ class _$LoginInitEventImpl implements _LoginInitEvent {
       Users users,
     )
     users,
+    required TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )
+    saveRoutes,
   }) {
     return loginInit(befor, success, error, userName, password);
   }
@@ -964,6 +1317,20 @@ class _$LoginInitEventImpl implements _LoginInitEvent {
       Users users,
     )?
     users,
+    TResult? Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
   }) {
     return loginInit?.call(befor, success, error, userName, password);
   }
@@ -1000,6 +1367,20 @@ class _$LoginInitEventImpl implements _LoginInitEvent {
       Users users,
     )?
     users,
+    TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
     required TResult orElse(),
   }) {
     if (loginInit != null) {
@@ -1016,6 +1397,7 @@ class _$LoginInitEventImpl implements _LoginInitEvent {
     required TResult Function(_LogoutEvent value) logout,
     required TResult Function(_SendCodeEvent value) sendCode,
     required TResult Function(_UsersEvent value) users,
+    required TResult Function(_SaveRoutesEvent value) saveRoutes,
   }) {
     return loginInit(this);
   }
@@ -1028,6 +1410,7 @@ class _$LoginInitEventImpl implements _LoginInitEvent {
     TResult? Function(_LogoutEvent value)? logout,
     TResult? Function(_SendCodeEvent value)? sendCode,
     TResult? Function(_UsersEvent value)? users,
+    TResult? Function(_SaveRoutesEvent value)? saveRoutes,
   }) {
     return loginInit?.call(this);
   }
@@ -1040,6 +1423,7 @@ class _$LoginInitEventImpl implements _LoginInitEvent {
     TResult Function(_LogoutEvent value)? logout,
     TResult Function(_SendCodeEvent value)? sendCode,
     TResult Function(_UsersEvent value)? users,
+    TResult Function(_SaveRoutesEvent value)? saveRoutes,
     required TResult orElse(),
   }) {
     if (loginInit != null) {
@@ -1192,6 +1576,20 @@ class _$LogoutEventImpl implements _LogoutEvent {
       Users users,
     )
     users,
+    required TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )
+    saveRoutes,
   }) {
     return logout(befor, success, error);
   }
@@ -1228,6 +1626,20 @@ class _$LogoutEventImpl implements _LogoutEvent {
       Users users,
     )?
     users,
+    TResult? Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
   }) {
     return logout?.call(befor, success, error);
   }
@@ -1264,6 +1676,20 @@ class _$LogoutEventImpl implements _LogoutEvent {
       Users users,
     )?
     users,
+    TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
     required TResult orElse(),
   }) {
     if (logout != null) {
@@ -1280,6 +1706,7 @@ class _$LogoutEventImpl implements _LogoutEvent {
     required TResult Function(_LogoutEvent value) logout,
     required TResult Function(_SendCodeEvent value) sendCode,
     required TResult Function(_UsersEvent value) users,
+    required TResult Function(_SaveRoutesEvent value) saveRoutes,
   }) {
     return logout(this);
   }
@@ -1292,6 +1719,7 @@ class _$LogoutEventImpl implements _LogoutEvent {
     TResult? Function(_LogoutEvent value)? logout,
     TResult? Function(_SendCodeEvent value)? sendCode,
     TResult? Function(_UsersEvent value)? users,
+    TResult? Function(_SaveRoutesEvent value)? saveRoutes,
   }) {
     return logout?.call(this);
   }
@@ -1304,6 +1732,7 @@ class _$LogoutEventImpl implements _LogoutEvent {
     TResult Function(_LogoutEvent value)? logout,
     TResult Function(_SendCodeEvent value)? sendCode,
     TResult Function(_UsersEvent value)? users,
+    TResult Function(_SaveRoutesEvent value)? saveRoutes,
     required TResult orElse(),
   }) {
     if (logout != null) {
@@ -1467,6 +1896,20 @@ class _$SendCodeEventImpl implements _SendCodeEvent {
       Users users,
     )
     users,
+    required TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )
+    saveRoutes,
   }) {
     return sendCode(befor, success, error, this.sendCode);
   }
@@ -1503,6 +1946,20 @@ class _$SendCodeEventImpl implements _SendCodeEvent {
       Users users,
     )?
     users,
+    TResult? Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
   }) {
     return sendCode?.call(befor, success, error, this.sendCode);
   }
@@ -1539,6 +1996,20 @@ class _$SendCodeEventImpl implements _SendCodeEvent {
       Users users,
     )?
     users,
+    TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
     required TResult orElse(),
   }) {
     if (sendCode != null) {
@@ -1555,6 +2026,7 @@ class _$SendCodeEventImpl implements _SendCodeEvent {
     required TResult Function(_LogoutEvent value) logout,
     required TResult Function(_SendCodeEvent value) sendCode,
     required TResult Function(_UsersEvent value) users,
+    required TResult Function(_SaveRoutesEvent value) saveRoutes,
   }) {
     return sendCode(this);
   }
@@ -1567,6 +2039,7 @@ class _$SendCodeEventImpl implements _SendCodeEvent {
     TResult? Function(_LogoutEvent value)? logout,
     TResult? Function(_SendCodeEvent value)? sendCode,
     TResult? Function(_UsersEvent value)? users,
+    TResult? Function(_SaveRoutesEvent value)? saveRoutes,
   }) {
     return sendCode?.call(this);
   }
@@ -1579,6 +2052,7 @@ class _$SendCodeEventImpl implements _SendCodeEvent {
     TResult Function(_LogoutEvent value)? logout,
     TResult Function(_SendCodeEvent value)? sendCode,
     TResult Function(_UsersEvent value)? users,
+    TResult Function(_SaveRoutesEvent value)? saveRoutes,
     required TResult orElse(),
   }) {
     if (sendCode != null) {
@@ -1743,6 +2217,20 @@ class _$UsersEventImpl implements _UsersEvent {
       Users users,
     )
     users,
+    required TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )
+    saveRoutes,
   }) {
     return users(befor, success, error, this.users);
   }
@@ -1779,6 +2267,20 @@ class _$UsersEventImpl implements _UsersEvent {
       Users users,
     )?
     users,
+    TResult? Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
   }) {
     return users?.call(befor, success, error, this.users);
   }
@@ -1815,6 +2317,20 @@ class _$UsersEventImpl implements _UsersEvent {
       Users users,
     )?
     users,
+    TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
     required TResult orElse(),
   }) {
     if (users != null) {
@@ -1831,6 +2347,7 @@ class _$UsersEventImpl implements _UsersEvent {
     required TResult Function(_LogoutEvent value) logout,
     required TResult Function(_SendCodeEvent value) sendCode,
     required TResult Function(_UsersEvent value) users,
+    required TResult Function(_SaveRoutesEvent value) saveRoutes,
   }) {
     return users(this);
   }
@@ -1843,6 +2360,7 @@ class _$UsersEventImpl implements _UsersEvent {
     TResult? Function(_LogoutEvent value)? logout,
     TResult? Function(_SendCodeEvent value)? sendCode,
     TResult? Function(_UsersEvent value)? users,
+    TResult? Function(_SaveRoutesEvent value)? saveRoutes,
   }) {
     return users?.call(this);
   }
@@ -1855,6 +2373,7 @@ class _$UsersEventImpl implements _UsersEvent {
     TResult Function(_LogoutEvent value)? logout,
     TResult Function(_SendCodeEvent value)? sendCode,
     TResult Function(_UsersEvent value)? users,
+    TResult Function(_SaveRoutesEvent value)? saveRoutes,
     required TResult orElse(),
   }) {
     if (users != null) {
@@ -1881,5 +2400,469 @@ abstract class _UsersEvent implements LoginEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UsersEventImplCopyWith<_$UsersEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveRoutesEventImplCopyWith<$Res> {
+  factory _$$SaveRoutesEventImplCopyWith(
+    _$SaveRoutesEventImpl value,
+    $Res Function(_$SaveRoutesEventImpl) then,
+  ) = __$$SaveRoutesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({
+    double latInit,
+    double lngInit,
+    double latFin,
+    double lngFin,
+    double currentlat,
+    double currentFin,
+    String originTime,
+    String originDescription,
+    String destinationDescription,
+    double distance,
+    double earnings,
+  });
+}
+
+/// @nodoc
+class __$$SaveRoutesEventImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$SaveRoutesEventImpl>
+    implements _$$SaveRoutesEventImplCopyWith<$Res> {
+  __$$SaveRoutesEventImplCopyWithImpl(
+    _$SaveRoutesEventImpl _value,
+    $Res Function(_$SaveRoutesEventImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latInit = null,
+    Object? lngInit = null,
+    Object? latFin = null,
+    Object? lngFin = null,
+    Object? currentlat = null,
+    Object? currentFin = null,
+    Object? originTime = null,
+    Object? originDescription = null,
+    Object? destinationDescription = null,
+    Object? distance = null,
+    Object? earnings = null,
+  }) {
+    return _then(
+      _$SaveRoutesEventImpl(
+        latInit: null == latInit
+            ? _value.latInit
+            : latInit // ignore: cast_nullable_to_non_nullable
+                  as double,
+        lngInit: null == lngInit
+            ? _value.lngInit
+            : lngInit // ignore: cast_nullable_to_non_nullable
+                  as double,
+        latFin: null == latFin
+            ? _value.latFin
+            : latFin // ignore: cast_nullable_to_non_nullable
+                  as double,
+        lngFin: null == lngFin
+            ? _value.lngFin
+            : lngFin // ignore: cast_nullable_to_non_nullable
+                  as double,
+        currentlat: null == currentlat
+            ? _value.currentlat
+            : currentlat // ignore: cast_nullable_to_non_nullable
+                  as double,
+        currentFin: null == currentFin
+            ? _value.currentFin
+            : currentFin // ignore: cast_nullable_to_non_nullable
+                  as double,
+        originTime: null == originTime
+            ? _value.originTime
+            : originTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        originDescription: null == originDescription
+            ? _value.originDescription
+            : originDescription // ignore: cast_nullable_to_non_nullable
+                  as String,
+        destinationDescription: null == destinationDescription
+            ? _value.destinationDescription
+            : destinationDescription // ignore: cast_nullable_to_non_nullable
+                  as String,
+        distance: null == distance
+            ? _value.distance
+            : distance // ignore: cast_nullable_to_non_nullable
+                  as double,
+        earnings: null == earnings
+            ? _value.earnings
+            : earnings // ignore: cast_nullable_to_non_nullable
+                  as double,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$SaveRoutesEventImpl implements _SaveRoutesEvent {
+  const _$SaveRoutesEventImpl({
+    required this.latInit,
+    required this.lngInit,
+    required this.latFin,
+    required this.lngFin,
+    required this.currentlat,
+    required this.currentFin,
+    required this.originTime,
+    required this.originDescription,
+    required this.destinationDescription,
+    required this.distance,
+    required this.earnings,
+  });
+
+  @override
+  final double latInit;
+  @override
+  final double lngInit;
+  @override
+  final double latFin;
+  @override
+  final double lngFin;
+  @override
+  final double currentlat;
+  @override
+  final double currentFin;
+  @override
+  final String originTime;
+  @override
+  final String originDescription;
+  @override
+  final String destinationDescription;
+  @override
+  final double distance;
+  @override
+  final double earnings;
+
+  @override
+  String toString() {
+    return 'LoginEvent.saveRoutes(latInit: $latInit, lngInit: $lngInit, latFin: $latFin, lngFin: $lngFin, currentlat: $currentlat, currentFin: $currentFin, originTime: $originTime, originDescription: $originDescription, destinationDescription: $destinationDescription, distance: $distance, earnings: $earnings)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveRoutesEventImpl &&
+            (identical(other.latInit, latInit) || other.latInit == latInit) &&
+            (identical(other.lngInit, lngInit) || other.lngInit == lngInit) &&
+            (identical(other.latFin, latFin) || other.latFin == latFin) &&
+            (identical(other.lngFin, lngFin) || other.lngFin == lngFin) &&
+            (identical(other.currentlat, currentlat) ||
+                other.currentlat == currentlat) &&
+            (identical(other.currentFin, currentFin) ||
+                other.currentFin == currentFin) &&
+            (identical(other.originTime, originTime) ||
+                other.originTime == originTime) &&
+            (identical(other.originDescription, originDescription) ||
+                other.originDescription == originDescription) &&
+            (identical(other.destinationDescription, destinationDescription) ||
+                other.destinationDescription == destinationDescription) &&
+            (identical(other.distance, distance) ||
+                other.distance == distance) &&
+            (identical(other.earnings, earnings) ||
+                other.earnings == earnings));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    latInit,
+    lngInit,
+    latFin,
+    lngFin,
+    currentlat,
+    currentFin,
+    originTime,
+    originDescription,
+    destinationDescription,
+    distance,
+    earnings,
+  );
+
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveRoutesEventImplCopyWith<_$SaveRoutesEventImpl> get copyWith =>
+      __$$SaveRoutesEventImplCopyWithImpl<_$SaveRoutesEventImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      String userName,
+      String password,
+    )
+    loginInit,
+    required TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+    )
+    logout,
+    required TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      SendCode sendCode,
+    )
+    sendCode,
+    required TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      Users users,
+    )
+    users,
+    required TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )
+    saveRoutes,
+  }) {
+    return saveRoutes(
+      latInit,
+      lngInit,
+      latFin,
+      lngFin,
+      currentlat,
+      currentFin,
+      originTime,
+      originDescription,
+      destinationDescription,
+      distance,
+      earnings,
+    );
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      String userName,
+      String password,
+    )?
+    loginInit,
+    TResult? Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+    )?
+    logout,
+    TResult? Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      SendCode sendCode,
+    )?
+    sendCode,
+    TResult? Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      Users users,
+    )?
+    users,
+    TResult? Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
+  }) {
+    return saveRoutes?.call(
+      latInit,
+      lngInit,
+      latFin,
+      lngFin,
+      currentlat,
+      currentFin,
+      originTime,
+      originDescription,
+      destinationDescription,
+      distance,
+      earnings,
+    );
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      String userName,
+      String password,
+    )?
+    loginInit,
+    TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+    )?
+    logout,
+    TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      SendCode sendCode,
+    )?
+    sendCode,
+    TResult Function(
+      dynamic Function(dynamic)? befor,
+      dynamic Function(dynamic)? success,
+      dynamic Function(dynamic)? error,
+      Users users,
+    )?
+    users,
+    TResult Function(
+      double latInit,
+      double lngInit,
+      double latFin,
+      double lngFin,
+      double currentlat,
+      double currentFin,
+      String originTime,
+      String originDescription,
+      String destinationDescription,
+      double distance,
+      double earnings,
+    )?
+    saveRoutes,
+    required TResult orElse(),
+  }) {
+    if (saveRoutes != null) {
+      return saveRoutes(
+        latInit,
+        lngInit,
+        latFin,
+        lngFin,
+        currentlat,
+        currentFin,
+        originTime,
+        originDescription,
+        destinationDescription,
+        distance,
+        earnings,
+      );
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialEvent value) initial,
+    required TResult Function(_LoginInitEvent value) loginInit,
+    required TResult Function(_LogoutEvent value) logout,
+    required TResult Function(_SendCodeEvent value) sendCode,
+    required TResult Function(_UsersEvent value) users,
+    required TResult Function(_SaveRoutesEvent value) saveRoutes,
+  }) {
+    return saveRoutes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialEvent value)? initial,
+    TResult? Function(_LoginInitEvent value)? loginInit,
+    TResult? Function(_LogoutEvent value)? logout,
+    TResult? Function(_SendCodeEvent value)? sendCode,
+    TResult? Function(_UsersEvent value)? users,
+    TResult? Function(_SaveRoutesEvent value)? saveRoutes,
+  }) {
+    return saveRoutes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialEvent value)? initial,
+    TResult Function(_LoginInitEvent value)? loginInit,
+    TResult Function(_LogoutEvent value)? logout,
+    TResult Function(_SendCodeEvent value)? sendCode,
+    TResult Function(_UsersEvent value)? users,
+    TResult Function(_SaveRoutesEvent value)? saveRoutes,
+    required TResult orElse(),
+  }) {
+    if (saveRoutes != null) {
+      return saveRoutes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SaveRoutesEvent implements LoginEvent {
+  const factory _SaveRoutesEvent({
+    required final double latInit,
+    required final double lngInit,
+    required final double latFin,
+    required final double lngFin,
+    required final double currentlat,
+    required final double currentFin,
+    required final String originTime,
+    required final String originDescription,
+    required final String destinationDescription,
+    required final double distance,
+    required final double earnings,
+  }) = _$SaveRoutesEventImpl;
+
+  double get latInit;
+  double get lngInit;
+  double get latFin;
+  double get lngFin;
+  double get currentlat;
+  double get currentFin;
+  String get originTime;
+  String get originDescription;
+  String get destinationDescription;
+  double get distance;
+  double get earnings;
+
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SaveRoutesEventImplCopyWith<_$SaveRoutesEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

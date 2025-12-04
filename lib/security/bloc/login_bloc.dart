@@ -26,6 +26,17 @@ sealed class LoginState with _$LoginState {
     @Default(null) String? status,
     @Default(null) String? userName,
     @Default(null) bool? isVerified,
+    @Default(null) double? latInit,
+    @Default(null) double? lngInit,
+    @Default(null) double? latFin,
+    @Default(null) double? lngFin,
+    @Default(null) double? currentlat,
+    @Default(null) double? currentFin,
+    @Default(null) String? originTime,
+    @Default(null) String? originDescription,
+    @Default(null) String? destinationDescription,
+    @Default(null) double? distance,
+    @Default(null) double? earnings
   }) = _LoginState;
 }
 
@@ -41,6 +52,12 @@ class LoginEvent with _$LoginEvent {
     Function(dynamic)? error, required SendCode sendCode}) = _SendCodeEvent;
   const factory LoginEvent.users({Function(dynamic)? befor,Function(dynamic)? success,
     Function(dynamic)? error, required Users users}) = _UsersEvent;
+  const factory LoginEvent.saveRoutes({required double latInit,required double lngInit,
+  required double latFin,required double lngFin,
+  required double currentlat,required double currentFin,
+  required String originTime,required String originDescription,
+  required String destinationDescription,required double distance,
+  required double earnings}) = _SaveRoutesEvent;
 }
 
 // 🧠 Bloc principal
@@ -56,6 +73,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           logout: (event) async => _logout(event, emit),
           sendCode: (event) async => _sendCode(event, emit),
           users: (event) async => _users(event, emit),
+          saveRoutes: (event) async => _saveRoutes(event, emit),
         );
       },
     );
@@ -65,6 +83,23 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _initial(_InitialEvent event, Emitter<LoginState> emit) async {
     
+  }
+  Future<void> _saveRoutes(_SaveRoutesEvent event, Emitter<LoginState> emit) async {
+    emit(
+            state.copyWith(
+              latInit:event.latInit,
+              lngInit:event.lngInit,
+              latFin:event.latFin,
+              lngFin:event.lngFin,
+              currentlat:event.currentlat,
+              currentFin:event.currentFin,
+              originTime: event.originTime,
+              originDescription: event.originDescription,
+              destinationDescription: event.destinationDescription,
+              distance: event.distance,
+              earnings: event.earnings,
+            ),
+          );
   }
 
   Future<void> _logout(_LogoutEvent event, Emitter<LoginState> emit) async {
@@ -119,6 +154,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
               typeUserId: res.data?.type_user_id,
               status: res.data?.status,
               isVerified: res.data?.is_verified,
+              
             ),
           );
           event.success!(res);

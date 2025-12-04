@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:app_texi_passenger/app/app_router.dart';
 import 'package:app_texi_passenger/app/widgets/double_icon_button_widget.dart';
 import 'package:app_texi_passenger/app/widgets/icon_text_button_widget.dart';
@@ -9,11 +11,14 @@ import 'package:app_texi_passenger/app/widgets/title_text_widget.dart';
 import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../../app/widgets/loading_dialog.dart';
+import '../../security/bloc/login_bloc.dart';
 
 class TravelRequestView extends HookWidget {
   const TravelRequestView({super.key});
@@ -200,6 +205,7 @@ class TravelRequestView extends HookWidget {
                 latInit.value != null &&
                 latFin.value != null)
             ? () async {
+                final LatLng randomPos = randomNearbyPoint(latInit.value!, lngInit.value!, 600);
                 final ref = await createIssue(
                   namePickSelection.value,
                   latFin.value!,
@@ -207,20 +213,30 @@ class TravelRequestView extends HookWidget {
                   nameDestinationSelection.value,
                   latInit.value!,
                   lngInit.value!,
+                  randomPos.latitude,
+                  randomPos.longitude,
                   'pending',
                   'Juan Perez',
-                  distance,
+                  1,
                   5.0,
                   double.parse(amountController.text),
                 );
 
                 final issueId = ref.id;
+                context.read<LoginBloc>().add(LoginEvent.saveRoutes(
+                  latInit: latInit.value!, 
+                  lngInit: lngInit.value!, 
+                  latFin: latFin.value!, 
+                  lngFin: lngFin.value!, 
+                  currentlat: randomPos.latitude,
+                  currentFin: randomPos.longitude,
+                  originTime: '5.0',
+                  originDescription: namePickSelection.value,
+                  destinationDescription: nameDestinationSelection.value,
+                  distance: 1,
+                  earnings: double.parse(amountController.text)
+                ));
                 showLoadingDialog(context,message: 'Buscando taxi');
-                // showDialog(
-                //   context: context,
-                //   barrierDismissible: false,
-                //   builder: (_) => const Center(child: CircularProgressIndicator()),
-                // );
                 FirebaseFirestore.instance
                     .collection('drive')
                     .doc(issueId)
@@ -232,7 +248,7 @@ class TravelRequestView extends HookWidget {
 
                   if (status == 'in_comming') {
                     Navigator.of(context).pop(); // Quitar loading
-                    appRouter.push('/travel/driver_tracking');
+                    appRouter.push('/travel/driver_tracking',extra: issueId);
                   }
                 });
                 // appRouter.push('/travel/driver_tracking');
@@ -256,9 +272,11 @@ class TravelRequestView extends HookWidget {
   }
 
   Future<DocumentReference> createIssue(String pasangerEnd,double pasangerEndLat,double pasangerEndLng,
-    String pasangerStart,double pasangerStartLat,double pasangerStartLng,String status,String fullName,double distanceKm,
+    String pasangerStart,double pasangerStartLat,double pasangerStartLng,double currentRouteLat,double currentRouteLng,String status,String fullName,double distanceKm,
     double timeMin,double amount) async {
         final ref = await FirebaseFirestore.instance.collection('drive').add({
+      'current_route_lat':currentRouteLat,
+      'current_route_lng':currentRouteLng,
       'pasanger_end': pasangerEnd,
       'pasanger_end_lat': pasangerEndLat,
       'pasanger_end_lng': pasangerEndLng,
@@ -275,7 +293,26 @@ class TravelRequestView extends HookWidget {
     // Guardar el ID dentro del documento
     await ref.update({'id': ref.id});
 
-    return ref; // ⭐ AGREGADO
+    return ref;
   }
+
+
+    LatLng randomNearbyPoint(double lat, double lng, double radiusInMeters) {
+      final random = Random();
+
+      double radiusInDegrees = radiusInMeters / 111320.0;
+
+      double u = random.nextDouble();
+      double v = random.nextDouble();
+
+      double w = radiusInDegrees * sqrt(u);
+      double t = 2 * pi * v;
+
+      double newLat = lat + w * cos(t);
+      double newLng = lng + w * sin(t) / cos(lat * pi / 180);
+
+      return LatLng(newLat, newLng);
+    }
+
   
 }

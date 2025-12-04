@@ -1,3 +1,4 @@
+import 'package:app_texi_passenger/app/app_router.dart';
 import 'package:app_texi_passenger/app/widgets/label_text_widget.dart';
 import 'package:app_texi_passenger/app/widgets/link_text_secondary_widget.dart';
 import 'package:app_texi_passenger/app/widgets/primary_button_widget.dart';
@@ -40,7 +41,9 @@ class TravelRatingView extends HookWidget {
           ),
         ),
         SizedBox(height: 30),
-        PrimaryButton(text: context.intl.btnSubmitRating, onPressed: (){}),
+        PrimaryButton(text: context.intl.btnSubmitRating, onPressed: (){
+          appRouter.pushReplacement('/travel/travel_request');
+        }),
         SizedBox(height: 30),
         Center(child: LinkTextSecondary(context.intl.linkSkipForNow, onTap: (){}))
       ],

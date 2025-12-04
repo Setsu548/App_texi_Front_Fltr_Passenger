@@ -15,10 +15,17 @@ class PrimaryButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: onPressed == null ? Colors.grey : null,
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.resolveWith<Color>(
+            (states) {
+              if (states.contains(MaterialState.disabled)) {
+                return Colors.grey; 
+              }
+              return Theme.of(context).colorScheme.primary; 
+            },
+          ),
         ),
-        onPressed: onPressed,
+        onPressed: onPressed, 
         child: Text(text),
       ),
     );

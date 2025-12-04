@@ -3,6 +3,7 @@ import 'package:app_texi_passenger/l10n/l10n_extension.dart';
 import 'package:app_texi_passenger/theme/main_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import '../../app/widgets/side_menu_item_widget.dart';
 
 class SideMenuView extends HookWidget {
@@ -10,6 +11,8 @@ class SideMenuView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentRoute = GoRouter.of(context).routerDelegate.currentConfiguration.matches.last.matchedLocation;
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -17,6 +20,7 @@ class SideMenuView extends HookWidget {
         SideMenuItem(
           icon: Icons.person,
           text: context.intl.sideMenuItemProfile,
+          isSelected: currentRoute.startsWith('/navigation/profile'),
           onTap: () {
             appRouter.push('/navigation/profile');
           },
@@ -24,6 +28,7 @@ class SideMenuView extends HookWidget {
         SideMenuItem(
           icon: Icons.history,
           text: context.intl.sideMenuItemHistory,
+          isSelected: currentRoute.startsWith('/navigation/travel_history'),
           onTap: () {
             appRouter.push('/navigation/travel_history');
           },
@@ -31,6 +36,7 @@ class SideMenuView extends HookWidget {
         SideMenuItem(
           icon: Icons.send,
           text: context.intl.sideMenuItemDestinations,
+          isSelected: currentRoute.startsWith('/navigation/saved_destinations'),
           onTap: () {
             appRouter.push('/navigation/saved_destinations');
           },
@@ -38,6 +44,7 @@ class SideMenuView extends HookWidget {
         SideMenuItem(
           icon: Icons.headset_mic,
           text: context.intl.sideMenuItemOperatorTexi,
+          isSelected: currentRoute.startsWith('/navigation/operator_texi'),
           onTap: () {
             appRouter.push('/navigation/operator_texi');
           },
@@ -45,6 +52,7 @@ class SideMenuView extends HookWidget {
         SideMenuItem(
           icon: Icons.people,
           text: context.intl.sideMenuItemContacts,
+          isSelected: currentRoute.startsWith('/navigation/contacts'),
           onTap: () {
             appRouter.push('/navigation/contacts');
           },

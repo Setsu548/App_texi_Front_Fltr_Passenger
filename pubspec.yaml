@@ -83,6 +83,7 @@ flutter:
   assets:
     - assets/images/texi.png
     - assets/images/texiFondo.png
+    - assets/images/taxi.png
     - lib/l10n/
 
   

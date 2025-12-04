@@ -1,5 +1,5 @@
 import 'package:app_texi_passenger/app/app_bar_logo_home.dart';
-import 'package:app_texi_passenger/navigation/view/side_menu_view.dart';
+// import 'package:app_texi_passenger/navigation/view/side_menu_view.dart';
 import 'package:app_texi_passenger/travel/view/travel_rating_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -12,15 +12,8 @@ class TravelRatingScreen extends HookWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       loadingOverlay: true,
-      appBar: AppBarLogoHome(context),
-      endDrawer: Padding(
-        padding: EdgeInsets.only(
-          top: MediaQuery.paddingOf(context).top - 50 + kToolbarHeight,
-        ),
-        child: Drawer(
-          child: SideMenuView(),
-        ),
-      ),
+      appBar: AppBarLogoHome(context,false,false),
+      endDrawer: null,
       disableBackButton: true,
       onBackButtonPressed: () async {
         return Future.value(true);

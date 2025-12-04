@@ -22,7 +22,7 @@ class TravelRequestScreen extends HookWidget {
       },
       child: AppScaffold(
         loadingOverlay: true,
-        appBar: AppBarLogoHome(context),
+        appBar: AppBarLogoHome(context,true,false),
         endDrawer: Padding(
         padding: EdgeInsets.only(
           top: MediaQuery.paddingOf(context).top - 50 + kToolbarHeight,
