@@ -13,7 +13,6 @@ Future<void> initApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   
-  await SecureTokenStorage.saveToken('dsd');
   String? token = await SecureTokenStorage.getToken();
   if (token != null && token != '') {
     appRouter.go('/travel/travel_request');

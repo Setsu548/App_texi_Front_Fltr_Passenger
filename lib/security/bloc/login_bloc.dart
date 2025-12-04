@@ -229,7 +229,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final users = Users(
           brand: androidInfo.brand, 
           email: event.users.email, 
-          full_name: event.users.full_name, 
+          alias_name: event.users.alias_name, 
           ip: '', model: event.users.model, 
           os: 'Android ${androidInfo.version.release}', 
           profile_picture: event.users.profile_picture, 
@@ -254,7 +254,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final users = Users(
           brand: iosInfo.utsname.machine, 
           email: event.users.email, 
-          full_name: event.users.full_name, 
+          alias_name: event.users.alias_name, 
           ip: '', model: event.users.model, 
           os: 'iOS ${iosInfo.systemVersion}', 
           profile_picture: event.users.profile_picture, 

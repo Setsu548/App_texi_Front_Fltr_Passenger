@@ -98,7 +98,7 @@ class ProfileDataView extends HookWidget {
                     final users = Users(
                       brand: '', 
                       email: emailController.text, 
-                      full_name: nameController.text, 
+                      alias_name: nameController.text, 
                       ip: '', model: '', 
                       os: '', 
                       profile_picture: base64ProfileFront!, 

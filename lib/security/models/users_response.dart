@@ -4,7 +4,7 @@ import 'dart:convert';
 class Users {
   final String brand;
   final String email;
-  final String full_name;
+  final String alias_name;
   final String ip;
   final String model;
   final String os;
@@ -13,7 +13,7 @@ class Users {
   Users({
     required this.brand,
     required this.email,
-    required this.full_name,
+    required this.alias_name,
     required this.ip,
     required this.model,
     required this.os,
@@ -35,7 +35,7 @@ class Users {
     return Users(
       brand: brand ?? this.brand,
       email: email ?? this.email,
-      full_name: first_name ?? this.full_name,
+      alias_name: first_name ?? this.alias_name,
       ip: ip ?? this.ip,
       model: model ?? this.model,
       os: os ?? this.os,
@@ -48,7 +48,7 @@ class Users {
     return <String, dynamic>{
       'brand': brand,
       'email': email,
-      'first_name': full_name,
+      'alias_name': alias_name,
       'ip': ip,
       'model': model,
       'os': os,
@@ -61,7 +61,7 @@ class Users {
     return Users(
       brand: map['brand'] as String,
       email: map['email'] as String,
-      full_name: map['full_name'] as String,
+      alias_name: map['alias_name'] as String,
       ip: map['ip'] as String,
       model: map['model'] as String,
       os: map['os'] as String,
@@ -76,7 +76,7 @@ class Users {
 
   @override
   String toString() {
-    return 'Users(brand: $brand, email: $email, full_name: $full_name, ip: $ip, model: $model, os: $os, profile_picture: $profile_picture, user_name: $user_name)';
+    return 'Users(brand: $brand, email: $email, alias_name: $alias_name, ip: $ip, model: $model, os: $os, profile_picture: $profile_picture, user_name: $user_name)';
   }
 
   @override
@@ -86,7 +86,7 @@ class Users {
     return 
       other.brand == brand &&
       other.email == email &&
-      other.full_name == full_name &&
+      other.alias_name == alias_name &&
       other.ip == ip &&
       other.model == model &&
       other.os == os &&
@@ -98,7 +98,7 @@ class Users {
   int get hashCode {
     return brand.hashCode ^
       email.hashCode ^
-      full_name.hashCode ^
+      alias_name.hashCode ^
       ip.hashCode ^
       model.hashCode ^
       os.hashCode ^
