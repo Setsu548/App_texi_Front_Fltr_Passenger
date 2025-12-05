@@ -29,7 +29,7 @@ class PassengerChatView extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         PersonInfoChat(
-          name: 'Miguel Angel Rojas',
+          name: 'Conductor TEXI',
           avatarImage: NetworkImage(''),
         ),
         Divider(

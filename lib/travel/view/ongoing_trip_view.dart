@@ -105,7 +105,7 @@ class OngoingTripView extends HookWidget {
             ),
             SizedBox(height: 10),
             DriverInfo(
-              personName: "Miguel Angel Rojas",
+              personName: "Conductor TEXI",
               vehicleName: "Toyota Corolla - Gris",
               licensePlate: "ABC-123",
               avatarUrl: "assets/images/texi.png",

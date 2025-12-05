@@ -62,7 +62,7 @@ class DriverTrackingView extends HookWidget {
               children: [
                 Expanded(
                   child: DriverRatingTile(
-                    name: 'Ana Martinez',
+                    name: 'Conductor TEXI',
                     rating: 4.9,
                     avatarImage: NetworkImage(''),
                   ),
