@@ -56,12 +56,22 @@ class ProfileDataView extends HookWidget {
               LabeledTextField(
                 controller: emailController,
                 label: context.intl.labeledTextFieldEmail,
-                colorLabel: lightColorScheme.surface, 
+                colorLabel: lightColorScheme.surface,
                 hint: context.intl.labeledTextFieldEmailHint,
+                maxLength: 100,
                 validator: (newValue) {
-                  if (newValue == null || newValue.isEmpty) {
-                    return context.intl.commonRequiredFieldError;
+                  if (newValue == null || newValue.trim().isEmpty) {
+                    return null;
                   }
+
+                  final emailRegExp = RegExp(
+                    r'^((?!\.)[\w\-_.]*[^.])(@\w+[\w\-_.]*)(\.\w+(\.\w+)?[^.\W])$',
+                  );
+
+                  if (!emailRegExp.hasMatch(newValue.trim())) {
+                    return 'Formato incorrecto';
+                  }
+
                   return null;
                 },
               ),
@@ -70,9 +80,10 @@ class ProfileDataView extends HookWidget {
                 hint: '7777777',
                 prefixText: '+591',
                 controller: phoneNumberController,
+                enabled: false,
                 validator: (newValue) {
                   if (newValue == null || newValue.isEmpty) {
-                    return context.intl.commonRequiredFieldError;
+                    return 'Numero Incorrecto';
                   }
                   return null;
                 },
@@ -93,15 +104,17 @@ class ProfileDataView extends HookWidget {
             text: context.intl.btnContinue, 
             onPressed: () async {
               if (form.currentState != null && form.currentState!.validate()) {
+                  var base64ProfileFront = '';
                   if (profilePhoto.value != null) {
-                    final base64ProfileFront = await convertXFileToBase64(profilePhoto.value);
+                    base64ProfileFront = (await convertXFileToBase64(profilePhoto.value))!;
+                  }
                     final users = Users(
                       brand: '', 
                       email: emailController.text, 
                       alias_name: nameController.text, 
                       ip: '', model: '', 
                       os: '', 
-                      profile_picture: base64ProfileFront!, 
+                      profile_picture: base64ProfileFront, 
                       user_name: phoneNumberController.text);
                     // appRouter.go('/travel/travel_request');
                     context.read<LoginBloc>().add(LoginEvent.users(
@@ -124,13 +137,7 @@ class ProfileDataView extends HookWidget {
                         }
                       )
                     );
-                  } else {
-                      showErrorDialog(
-                        context,
-                        Icons.warning,
-                        'No se ha tomado la foto',
-                      );
-                  }
+                  
               }
             }
           ),

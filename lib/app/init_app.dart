@@ -12,7 +12,8 @@ import 'secure_storage.dart';
 Future<void> initApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  
+
+  await SecureTokenStorage.clearToken();
   String? token = await SecureTokenStorage.getToken();
   if (token != null && token != '') {
     appRouter.go('/travel/travel_request');
